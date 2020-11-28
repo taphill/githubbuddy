@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'faraday'
 gem 'omniauth-github'
 
 group :development, :test do
