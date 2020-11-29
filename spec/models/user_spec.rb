@@ -1,11 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require './spec/support/omniauth_helpers'
-
-RSpec.configure do |c|
-  c.include OmniauthHelpers
-end
 
 RSpec.describe User, type: :model do
   describe 'validations' do
@@ -22,26 +17,26 @@ RSpec.describe User, type: :model do
     describe '.from_omniauth' do
       context 'when the user already exists' do
         it 'returns the user' do
-          user = described_class.create_from_omniauth(omniauth_request)
+          user = described_class.create_from_omniauth(mock_auth_hash)
 
-          expect(described_class.from_omniauth(omniauth_request)).to eq(user)
+          expect(described_class.from_omniauth(mock_auth_hash)).to eq(user)
         end
       end
 
       context 'when the user does not exist' do
         it 'creates a new user' do
-          expect(described_class.from_omniauth(omniauth_request)).to eq(described_class.all.first)
+          expect(described_class.from_omniauth(mock_auth_hash)).to eq(described_class.all.first)
         end
       end
     end
 
     describe '.create_from_omniauth' do
-      let(:user) { described_class.create_from_omniauth(omniauth_request) }
+      let(:user) { described_class.create_from_omniauth(mock_auth_hash) }
 
-      it { expect(user.uid).to eq(omniauth_request['uid']) }
-      it { expect(user.nickname).to eq(omniauth_request['info']['nickname']) }
-      it { expect(user.name).to eq(omniauth_request['info']['name']) }
-      it { expect(user.image).to eq(omniauth_request['info']['image']) }
+      it { expect(user.uid).to eq(mock_auth_hash['uid']) }
+      it { expect(user.nickname).to eq(mock_auth_hash['info']['nickname']) }
+      it { expect(user.name).to eq(mock_auth_hash['info']['name']) }
+      it { expect(user.image).to eq(mock_auth_hash['info']['image']) }
     end
   end
 end
