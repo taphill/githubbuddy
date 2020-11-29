@@ -1,7 +1,7 @@
 # rubocop:disable all
 
 module OmniauthHelpers
-  def auth_hash
+  def omniauth_request
     {"provider"=>"github",
      "uid"=>"62676321",
      "info"=>
