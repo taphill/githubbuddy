@@ -1,3 +1,5 @@
+# rubocop:disable all
+
 module OmniauthHelpers
   def auth_hash
     {"provider"=>"github",

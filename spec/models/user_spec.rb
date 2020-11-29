@@ -22,28 +22,26 @@ RSpec.describe User, type: :model do
     describe '.from_omniauth' do
       context 'when the user already exists' do
         it 'returns the user' do
-          user = User.create_from_omniauth(auth_hash)
+          user = described_class.create_from_omniauth(auth_hash)
 
-          expect(User.from_omniauth(auth_hash)).to eq(user)
+          expect(described_class.from_omniauth(auth_hash)).to eq(user)
         end
       end
 
       context 'when the user does not exist' do
         it 'creates a new user' do
-          expect(User.from_omniauth(auth_hash)).to eq(User.all.first)
+          expect(described_class.from_omniauth(auth_hash)).to eq(described_class.all.first)
         end
       end
     end
 
     describe '.create_from_omniauth' do
-      it 'creates a user from an omniauth get request' do
-        user = User.create_from_omniauth(auth_hash)
+      let(:user) { described_class.create_from_omniauth(auth_hash) }
 
-        expect(user.uid).to eq(auth_hash['uid'])
-        expect(user.nickname).to eq(auth_hash['info']['nickname'])
-        expect(user.name).to eq(auth_hash['info']['name'])
-        expect(user.image).to eq(auth_hash['info']['image'])
-      end
+      it { expect(user.uid).to eq(auth_hash['uid']) }
+      it { expect(user.nickname).to eq(auth_hash['info']['nickname']) }
+      it { expect(user.name).to eq(auth_hash['info']['name']) }
+      it { expect(user.image).to eq(auth_hash['info']['image']) }
     end
   end
 end
