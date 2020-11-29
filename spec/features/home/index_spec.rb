@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Home/Index", type: :feature do
+RSpec.describe 'Home/Index', type: :feature do
   describe 'login' do
     before do
       OmniAuth.config.mock_auth[:github] = nil
@@ -24,7 +26,7 @@ RSpec.describe "Home/Index", type: :feature do
       visit root_path
       click_link 'Link your GitHub account!'
 
-      expect(page).to have_content("Hello adoug!")
+      expect(page).to have_content('Hello adoug!')
     end
   end
 end
