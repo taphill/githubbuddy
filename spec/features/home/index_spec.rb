@@ -20,13 +20,21 @@ RSpec.describe 'Home/Index', type: :feature do
           'expires' => 'false'
         }
       }
-    end
 
-    it 'can log in user with GitHub account' do
       visit root_path
       click_link 'Link your GitHub account!'
+    end
 
-      expect(page).to have_content('Hello adoug!')
+    context 'when successful' do
+      it { expect(page).to have_content('Hello adoug!') }
+    end
+
+    context 'when unsuccessful' do
+      before do
+        OmniAuth.config.mock_auth[:github] = :invalid_credentials
+      end
+      
+      it { expect(page).to have_current_path(root_path) }
     end
   end
 end
