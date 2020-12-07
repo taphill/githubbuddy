@@ -1,0 +1,19 @@
+<% current_user.get_stars.each do |star| %>
+  <div class="container mx-auto bg-gray-100 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+    <div class="text-xl text-blue-500 font-bold p-4">
+      <%= link_to "#{star[:full_name]}", "#{star[:html_url]}" %>
+    </div>
+
+    <div class="pl-4 pb-2"><%= star[:description] %></div>
+
+    <div class="pl-4 pb-4">
+      <ul class="flex flex-row">
+        <li class="pr-4">Langauge: <%= star[:language] %></li>
+        <li class="pr-4">Stars: <%= star[:stargazers_count] %></li>
+        <li class="pr-4">Forks: <%= star[:forks_count] %></li>
+      </ul>
+      <%# <div class="pl-4 pb-4">Forks: <%= star[:forks_count] %1></div> %>
+    </div>
+  </div>
+  <br>
+<% end %>
