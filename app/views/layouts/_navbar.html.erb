@@ -1,0 +1,27 @@
+<div class="mx-auto bg-gray-100 p-5 shadow-sm">
+  <nav class="flex justify-between items-center">
+
+    <div>
+      <ul class="flex flex-row">
+        <li class="pr-5">
+          <h2>GitHub Buddy</h2>
+        </li>
+        <li class="pr-5">
+          <%= link_to 'Home', root_path %>
+        </li>
+        <li class="pr-5">
+          <%= link_to 'Stars', stars_path %>
+        </li>
+        <li class="pr-5">
+          <%= link_to 'GitHub', 'https://github.com/taphill/githubbuddy' %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="relative inline-block">
+      <%= image_tag(current_user.image, class: "inline-block object-cover w-12 h-12 rounded-full") %>
+      <span class="absolute bottom-0 right-0 inline-block w-3 h-3 bg-green-600 border-2 border-white rounded-full"></span>
+    </div>
+  </nav>
+</div>
+<br>
