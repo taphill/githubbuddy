@@ -1,5 +1,4 @@
 <% current_user.get_stars.each do |star| %>
-  <% require 'pry'; binding.pry %>
   <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
     <%= link_to "#{star[:html_url]}" do%>
       <span class="text-xl text-blue-500"><%= star[:owner][:login] %></span>
