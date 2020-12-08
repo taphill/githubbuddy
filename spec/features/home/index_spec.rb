@@ -22,7 +22,7 @@ RSpec.describe 'Home/Index', type: :feature do
       }
 
       visit root_path
-      click_link 'Link your GitHub account!'
+      click_link 'Sign In'
     end
 
     context 'when successful' do
