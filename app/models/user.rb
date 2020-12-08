@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true
   validates :name, presence: true
 
+  has_secure_token :auth_token
+
   def self.from_omniauth(auth_hash)
     find_by(uid: auth_hash['uid']) || create_from_omniauth(auth_hash)
   end
