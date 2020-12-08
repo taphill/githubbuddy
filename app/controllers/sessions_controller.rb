@@ -3,7 +3,7 @@
 class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(request.env['omniauth.auth'])
-    # session[:user_id] = user.id
+
     cookies.permanent[:auth_token] = user.auth_token
     flash[:notice] = "Hello #{user.nickname}!"
     redirect_to root_path
