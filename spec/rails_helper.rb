@@ -34,9 +34,6 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 OmniAuth.config.test_mode = true
-OmniAuth.config.on_failure = Proc.new { |env|
-  OmniAuth::FailureEndpoint.new(env).redirect_to_failure
-}
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
