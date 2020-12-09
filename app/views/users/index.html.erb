@@ -1,19 +1,21 @@
-<% @repos.each do |repo| %>
-  <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
-    <%= link_to repo.url do%>
-      <span class="text-xl text-blue-500"><%= repo.owner %></span>
-      <span class="text-xl text-blue-500">/</span>
-      <span class="text-xl text-blue-500 font-bold"><%= repo.name %></span>
-    <% end %>
+<% @stars.each do |star| %>
+  <div class="user-star">
+    <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+      <%= link_to star.url do%>
+        <span class="text-xl text-blue-500"><%= star.owner %></span>
+        <span class="text-xl text-blue-500">/</span>
+        <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
+      <% end %>
 
-    <div class="pt-2 pb-2"><%= repo.description %></div>
+      <div class="pt-2 pb-2"><%= star.description %></div>
 
-    <div class="pb-4">
-      <ul class="flex flex-row">
-        <li class="pr-4">Langauge: <%= repo.language %></li>
-        <li class="pr-4">Stars: <%= repo.star_count %></li>
-        <li class="pr-4">Forks: <%= repo.fork_count %></li>
-      </ul>
+      <div class="pb-4">
+        <ul class="flex flex-row">
+          <li class="pr-4">Langauge: <%= star.language %></li>
+          <li class="pr-4">Stars: <%= star.star_count %></li>
+          <li class="pr-4">Forks: <%= star.fork_count %></li>
+        </ul>
+      </div>
     </div>
   </div>
   <br>
