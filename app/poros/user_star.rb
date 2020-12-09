@@ -1,4 +1,4 @@
-class Repo
+class UserStar
   attr_reader :name, :owner, :url, :description, :language, :star_count, :fork_count
 
   def initialize(data)
