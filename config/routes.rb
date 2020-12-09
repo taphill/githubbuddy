@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/stars', to: 'users#index'
 
   get 'auth/github/callback', to: 'sessions#create'
-  # get 'auth/failure', to: redirect: root_path
+  get 'auth/failure', to: 'auth#failure' 
 end
