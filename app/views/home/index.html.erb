@@ -1,4 +1,20 @@
-<div class="text-center">
-  Home Page Content
+<div class="container mx-auto px-48 py-48 object-center">
+  <div class="container bg-white border-2 border-gray-300 h-96 w-96 mx-auto rounded-lg shadow-lg">
+    <div class="text-center text-6xl text-bold p-8">
+      Sign in
+    </div>
+
+    <div class="text-center text-md p-4">
+      Welcome!
+    </div>
+
+    <div class="container mx-auto p-4 object-center">
+      <%= link_to 'auth/github' do %>
+        <div class="container mx-auto border-2 border-pink-500 bg-pink-500 hover:bg-pink-300 text-center text-gray-100 hover:text-black w-64 p-2 rounded-2xl">
+          SIGN IN WITH GITHUB
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 <br>
