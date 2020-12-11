@@ -10,10 +10,19 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-white">
-    <%= render 'layouts/navbar' %>
-    <%= render 'layouts/alerts' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <header>
+      <%= render 'layouts/navbar' %>
+      <%= render 'layouts/alerts' %>
+    </header>
+
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+
+    <footer>
+      <%= render 'layouts/contributing' %>
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
