@@ -1,5 +1,19 @@
 <% flash.each do |name, msg| %>
-  <div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">
-    <p><%= msg %></p>
+  <div class="px-8">
+    <% case name %>
+    <% when 'success' %>
+      <div class="w-98 px-4 py-3 text-center text-green-700 bg-green-100 rounded-lg">
+        <p><%= msg %></p>
+      </div>
+    <% when 'error' %>
+      <div class="w-98 px-4 py-3 text-center text-red-700 bg-red-100 rounded-lg">
+        <%= msg %>
+      </div>
+    <% else %>
+      <div class="w-98 px-4 py-3 text-center text-green-700 bg-green-100 rounded-lg">
+        <p><%= msg %></p>
+      </div>
+    <% end %>
   </div>
+  <br>
 <% end %>
