@@ -21,13 +21,23 @@ RSpec.describe 'Home/Index', type: :feature do
             'expires' => 'false'
           }
         }
-
-        visit root_path
-        click_link 'Sign In'
       end
 
-      it { expect(page).to have_current_path(root_path) }
-      it { expect(page).to have_content('Hello adoug!') }
+      it 'has current path of user_root_path' do
+        VCR.use_cassette('Home/Index') do
+          visit root_path
+          click_link 'Sign In'
+          expect(page).to have_current_path(user_root_path('adoug'))
+        end
+      end
+
+      it 'has welcome flash message' do
+        VCR.use_cassette('Home/Index') do
+          visit root_path
+          click_link 'Sign In'
+          expect(page).to have_content('Hello adoug!')
+        end
+      end
     end
 
     context 'When unsuccessful' do
@@ -38,7 +48,7 @@ RSpec.describe 'Home/Index', type: :feature do
       end
       
       it { expect(page).to have_current_path(root_path) }
-      it { expect(page).to have_content('Failed login') }
+      it { expect(page).to have_content('Sign In failed') }
     end
   end
 end
