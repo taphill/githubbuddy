@@ -220,8 +220,6 @@ GEM
       unicode-display_width (>= 1.4.0, < 2.0)
     rubocop-ast (1.1.0)
       parser (>= 2.7.1.5)
-    rubocop-minitest (0.10.1)
-      rubocop (>= 0.87)
     rubocop-performance (1.8.1)
       rubocop (>= 0.87.0)
       rubocop-ast (>= 0.4.0)
@@ -313,7 +311,6 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   rspec-rails
   rubocop (= 0.93.1)
-  rubocop-minitest
   rubocop-performance
   rubocop-rails
   rubocop-rspec
