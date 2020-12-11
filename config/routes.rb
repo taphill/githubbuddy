@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get '/stars', to: 'users#index'
+  get '/:nickname', to: 'users#index', as: 'user_root'
 
   get 'auth/github/callback', to: 'sessions#create'
   get 'auth/failure', to: 'auth#failure' 

@@ -6,6 +6,6 @@ class SessionsController < ApplicationController
 
     cookies.permanent[:auth_token] = user.auth_token
     flash[:notice] = "Hello #{user.nickname}!"
-    redirect_to root_path
+    redirect_to user_root_path(user.nickname)
   end
 end
