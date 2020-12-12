@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class UserStarsFacade
+class UserFacade
   def self.user_stars(user_nickname)
-    json = GitHubService.user_stars(user_nickname)
+    json = GitRepoService.user_stars(user_nickname)
 
     json.map do |star_data|
       UserStar.new(star_data)
