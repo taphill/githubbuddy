@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Rails/FilePath
-
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -24,7 +22,9 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
+# rubocop:disable Rails/FilePath
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+# rubocop:enable Rails/FilePath
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -87,5 +87,3 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GITHUB_CLIENT_SECRET>') { Rails.application.credentials.github[:client_secret] }
   config.default_cassette_options = { re_record_interval: 7.days }
 end
-
-# rubocop:enable Rails/FilePath
