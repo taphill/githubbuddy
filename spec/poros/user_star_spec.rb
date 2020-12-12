@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe UserStar do
-  let(:user_star) { UserStar.new(mock_repo_data) }
+  let(:user_star) { described_class.new(mock_repo_data) }
 
-  it { expect(user_star).to be_a UserStar }
+  it { expect(user_star).to be_a described_class }
   it { expect(user_star.name).to eq('travis.rb') }
   it { expect(user_star.owner).to eq('travis-ci') }
   it { expect(user_star.url).to eq('https://github.com/travis-ci/travis.rb') }

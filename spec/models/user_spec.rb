@@ -16,18 +16,19 @@ RSpec.describe User, type: :model do
 
   describe 'class methods' do
     describe '.from_omniauth' do
-      context 'when the user already exists' do
-        it 'returns the user' do
-          user = described_class.create_from_omniauth(mock_auth_hash)
+      context 'when the user already exists it returns the user' do
+        # Create user
+        let(:user_created) { described_class.create_from_omniauth(mock_auth_hash) }
 
-          expect(described_class.from_omniauth(mock_auth_hash)).to eq(user)
-        end
+        # Make sure we are finding that user
+        let(:user_found) { described_class.from_omniauth(user_created) }
+
+        it { expect(user_found).to be_a(described_class) }
+        it { expect(user_found).to eq(user_created) }
       end
 
-      context 'when the user does not exist' do
-        it 'creates a new user' do
-          expect(described_class.from_omniauth(mock_auth_hash)).to eq(described_class.all.first)
-        end
+      context 'when the user does not exist it creates a new user' do
+        it { expect(described_class.from_omniauth(mock_auth_hash)).to eq(described_class.all.first) }
       end
     end
 

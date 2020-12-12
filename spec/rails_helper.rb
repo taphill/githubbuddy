@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/FilePath
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -85,3 +87,5 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GITHUB_CLIENT_SECRET>') { Rails.application.credentials.github[:client_secret] }
   config.default_cassette_options = { re_record_interval: 7.days }
 end
+
+# rubocop:enable Rails/FilePath

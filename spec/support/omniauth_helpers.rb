@@ -38,6 +38,6 @@ module OmniauthHelpers
   def login_user
     mock_real_auth_hash
     visit root_path
-    click_link 'Sign In'
+    click_link 'Sign in'
   end
 end

@@ -58,17 +58,17 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '40'
+      - '41'
       X-Ratelimit-Reset:
       - '1607733034'
       X-Ratelimit-Used:
-      - '20'
+      - '19'
       Accept-Ranges:
       - bytes
       Content-Length:
       - '16003'
       X-Github-Request-Id:
-      - 9827:48C2:179664:293C52:5FD40349
+      - 27C5:66F7:1CB840:31EAB5:5FD40349
     body:
       encoding: ASCII-8BIT
       string: !binary |-

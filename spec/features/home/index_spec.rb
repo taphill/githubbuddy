@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Home/Index', type: :feature do
   describe 'Sign in' do
-    context 'When successful' do
+    context 'when successful' do
       before do
         OmniAuth.config.mock_auth[:github] = nil
         OmniAuth.config.mock_auth[:github] = {
@@ -26,7 +26,7 @@ RSpec.describe 'Home/Index', type: :feature do
       it 'has current path of user_root_path' do
         VCR.use_cassette('Home/Index') do
           visit root_path
-          click_link 'Sign In'
+          click_link 'Sign in'
           expect(page).to have_current_path(user_root_path('adoug'))
         end
       end
@@ -34,19 +34,19 @@ RSpec.describe 'Home/Index', type: :feature do
       it 'has welcome flash message' do
         VCR.use_cassette('Home/Index') do
           visit root_path
-          click_link 'Sign In'
+          click_link 'Sign in'
           expect(page).to have_content('Hello adoug!')
         end
       end
     end
 
-    context 'When unsuccessful' do
+    context 'when unsuccessful' do
       before do
         OmniAuth.config.mock_auth[:github] = :invalid_credentials
         visit root_path
-        click_link 'Sign In'
+        click_link 'Sign in'
       end
-      
+
       it { expect(page).to have_current_path(root_path) }
       it { expect(page).to have_content('Sign In failed') }
     end

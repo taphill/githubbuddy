@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserStarsFacade
   def self.user_stars(user_nickname)
     json = GitHubService.user_stars(user_nickname)

@@ -18,3 +18,16 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/**/*'
     - './*'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4
+
+Capybara/FeatureMethods:
+  EnabledMethods:
+    - 'scenario'

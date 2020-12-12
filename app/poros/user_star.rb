@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserStar
   attr_reader :name, :owner, :url, :description, :language, :star_count, :fork_count
 

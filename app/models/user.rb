@@ -19,9 +19,4 @@ class User < ApplicationRecord
       user.image = auth_hash['info']['image']
     end
   end
-
-  def get_stars
-    res = Faraday.get("https://api.github.com/users/#{self.nickname}/starred")
-    JSON.parse(res.body, symbolize_names: true)
-  end
 end
