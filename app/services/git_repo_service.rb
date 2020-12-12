@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GitHubService
+class GitRepoService
   def self.conn
     Faraday.new(url: 'https://api.github.com')
   end
