@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe UserStar do
-  # let(:user_star) { described_class.new(mock_repo_data) }
   let(:attr) do
     {
       name: 'mikejones',
