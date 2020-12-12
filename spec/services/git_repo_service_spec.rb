@@ -34,5 +34,9 @@ RSpec.describe GitRepoService, type: :service do
       it { expect(first_result).to have_key :forks_count }
       it { expect(first_result[:forks_count]).to be_a(Integer) }
     end
+
+    describe '.user_stars(user_nickname) when passed an invalid nickname' do
+      # Sad path testing will go here
+    end
   end
 end
