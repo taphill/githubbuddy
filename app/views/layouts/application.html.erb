@@ -6,10 +6,23 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <header>
+      <%= render 'layouts/navbar' %>
+      <%= render 'layouts/alerts' %>
+    </header>
+
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+
+    <footer>
+      <%= render 'layouts/contributing' %>
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
