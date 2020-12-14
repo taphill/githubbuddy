@@ -13,6 +13,11 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to have_secure_token(:auth_token) }
   end
+  
+  describe 'relationships' do
+    it { is_expected.to have_many(:user_repos) }
+    it { is_expected.to have_many(:repos).through(:user_repos) }
+  end
 
   describe 'class methods' do
     describe '.from_omniauth' do

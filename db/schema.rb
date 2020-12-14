@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_024753) do
+ActiveRecord::Schema.define(version: 2020_12_14_060805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "repos", force: :cascade do |t|
+    t.integer "github_repo_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
@@ -42,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_12_08_024753) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "user_repos", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "repo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["repo_id"], name: "index_user_repos_on_repo_id"
+    t.index ["user_id"], name: "index_user_repos_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "uid", null: false
     t.string "nickname", null: false
@@ -56,4 +72,6 @@ ActiveRecord::Schema.define(version: 2020_12_08_024753) do
   end
 
   add_foreign_key "taggings", "tags"
+  add_foreign_key "user_repos", "repos"
+  add_foreign_key "user_repos", "users"
 end
