@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Repo < ApplicationRecord
-  validates_presence_of :github_repo_id, :name
+  validates :github_repo_id, presence: true, uniqueness: true
 
   has_many :user_repos
   has_many :users, through: :user_repos
