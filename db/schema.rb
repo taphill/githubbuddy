@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_14_060805) do
+ActiveRecord::Schema.define(version: 2020_12_15_013204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "repos", force: :cascade do |t|
-    t.integer "github_repo_id"
-    t.string "name"
+    t.integer "github_repo_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["github_repo_id"], name: "index_repos_on_github_repo_id", unique: true
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_12_14_060805) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["repo_id"], name: "index_user_repos_on_repo_id"
+    t.index ["user_id", "repo_id"], name: "index_user_repos_on_user_id_and_repo_id", unique: true
     t.index ["user_id"], name: "index_user_repos_on_user_id"
   end
 
