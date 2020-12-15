@@ -15,7 +15,7 @@ RSpec.describe UserStar do
     }
   end
 
-  let(:user_star) { UserStar.new(attr) }
+  let(:user_star) { described_class.new(attr) }
 
   it { expect(user_star).to be_a described_class }
   it { expect(user_star.name).to eq('mikejones') }
