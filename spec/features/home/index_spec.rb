@@ -23,19 +23,13 @@ RSpec.describe 'Home/Index', type: :feature do
         }
       end
 
-      it 'has current path of user_root_path' do
+      it 'has current path of welcome_index_path' do
         VCR.use_cassette('Home/Index') do
           visit root_path
           click_link 'Sign in'
-          expect(page).to have_current_path(user_root_path('adoug'))
-        end
-      end
-
-      it 'has welcome flash message' do
-        VCR.use_cassette('Home/Index') do
-          visit root_path
-          click_link 'Sign in'
-          expect(page).to have_content('Hello adoug!')
+          expect(page).to have_current_path(welcome_index_path)
+          expect(page).to have_content('Hello adoug')
+          save_and_open_page
         end
       end
     end
