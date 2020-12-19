@@ -5,10 +5,7 @@ class UserFacade
     json = GitRepoService.user_stars(user.nickname)
 
     create_repo_records(user: user, json_data: json)
-
-    json.map do |star_data|
-      UserStar.new(star_data)
-    end
+    create_repo_objects(json)
   end
 
   def self.create_repo_records(user:, json_data:)
@@ -17,6 +14,12 @@ class UserFacade
 
       user_repo = UserRepo.new(user_id: user.id, repo_id: repo.id)
       user_repo.save
+    end
+  end
+
+  def self.create_repo_objects(json)
+    json.map do |star_data|
+      UserStar.new(star_data)
     end
   end
 end
