@@ -2,6 +2,9 @@
 
 FactoryBot.define do
   factory :repo do
-    github_repo_id { 1 }
+    sequence(:github_id) { |n| "#{n}" }
+    name { Faker::Name.last_name }
+    owner { Faker::Internet.username }
+    url { Faker::Internet.url(host: 'github.com') }
   end
 end
