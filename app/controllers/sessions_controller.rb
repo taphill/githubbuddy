@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(request.env['omniauth.auth'])
 
     cookies.permanent[:auth_token] = user.auth_token
-    flash[:notice] = "Hello #{user.nickname}!"
-    redirect_to user_root_path(user.nickname)
+    redirect_to welcome_index_path
   end
 end
