@@ -18,7 +18,7 @@
       </div>
 
       <div class="pb-4">
-        <%= link_to user_repo_edit_path(star.name) do%>
+        <%= link_to tags_edit_path(star.name, params: { star: star }) do%>
           <div class="border-2 border-pink-500 hover:bg-pink-200 text-center w-48 px-4 py-2 rounded-2xl">
             Add tags
           </div>
