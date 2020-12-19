@@ -1,0 +1,22 @@
+<div class="container mx-auto px-24 py-24 object-center">
+  <div class="text-center text-6xl text-bold p-8">
+    <span>Hello <%= current_user.nickname %>! &#128075;</span>
+  </div>
+
+  <div class="text-center text-xl p-4">
+    Whenever you're ready go ahead and sync your account.
+  </div>
+
+  <div class="text-center text-xl p-4">
+    We'll pull in all your starred repos so you can start organizing!
+  </div>
+
+
+  <div class="container mx-auto p-12 object-center">
+    <%= link_to sync_index_path do %>
+      <div class="container mx-auto border-2 border-pink-500 bg-pink-500 hover:bg-pink-300 text-center text-gray-100 hover:text-black w-64 p-6 rounded-2xl">
+        <span class="text-lg">Sync Account</span>
+      </div>
+    <% end %>
+  </div>
+</div>
