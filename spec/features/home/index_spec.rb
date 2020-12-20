@@ -41,7 +41,7 @@ RSpec.describe 'Home/Index', type: :feature do
       end
 
       it { expect(page).to have_current_path(root_path) }
-      it { expect(page).to have_content('Sign In failed') }
+      it { expect(page).to have_content('Sign in failed') }
     end
   end
 end
