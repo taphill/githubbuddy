@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'home#index'
+
+  resources :welcome, only: [:index]
+
+  resources :sync, only: [:index]
+
+  get '/:nickname', to: 'users#index', as: 'user_root'
+
+  get '/tags/:repo', to: 'tags#edit', as: 'tags_edit'
+
+  get 'auth/github/callback', to: 'sessions#create'
+  get 'auth/failure', to: 'auth#failure' 
 end
