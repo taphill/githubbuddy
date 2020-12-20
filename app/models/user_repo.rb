@@ -7,6 +7,4 @@ class UserRepo < ApplicationRecord
 
   belongs_to :user
   belongs_to :repo
-
-  acts_as_taggable_on :tags
 end
