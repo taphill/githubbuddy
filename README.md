@@ -2,7 +2,7 @@
 
 [![Status](https://img.shields.io/badge/status-dev-green)]()
 [![Ruby Version](https://img.shields.io/badge/ruby-v2.7.2-red)](https://www.ruby-lang.org/en/downloads/releases/)
-[![Rails Version](https://img.shields.io/badge/rails-v6.0.3.4-red)](https://rubyonrails.org/)
+[![Rails Version](https://img.shields.io/badge/rails-v6.1.0.0-red)](https://rubyonrails.org/)
 
 A better way to manage your favorite repositories.
 
@@ -28,7 +28,7 @@ This high level model overview is the initial design for GitHub Buddy and highli
 
 ## Contribution
 
-This application currently uses Rails 6.0.3.4 and Ruby 2.7.2. To contribute please fork this repo and then clone it to your local machine.
+This application currently uses Rails 6.1.0.0 and Ruby 2.7.2. To contribute please fork this repo and then clone it to your local machine.
 
 To get your dev environment setup please make sure you have all of the following:
 
