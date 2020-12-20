@@ -7,7 +7,7 @@
         <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
       <% end %>
 
-      <div class="pt-2 pb-2"><%= star.description %></div>
+      <div class="pt-4 pb-8"><%= star.description %></div>
 
       <div class="pb-4">
         <%= link_to tags_edit_path(star.name, params: { star: star }) do%>
