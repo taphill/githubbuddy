@@ -20,4 +20,6 @@ class SyncFacade
       repo.description = data[:description]
     end
   end
+
+  private_class_method :find_or_create_repo
 end

@@ -10,12 +10,13 @@ RSpec.describe SyncFacade, type: :facade do
       described_class.fetch_user_stars(user)
     end
 
-    it 'creates repos', :vcr do
-      expect(Repo.all.count).to eq(30)
+    it 'creates user repos', :vcr do
+      expect(UserRepo.all.count).to eq(67)
     end
 
-    it 'creates user repos', :vcr do
-      expect(UserRepo.all.count).to eq(30)
+    it 'creates repos', :vcr do
+      expect(Repo.all.count).to eq(67)
+      expect(Repo.last.name).to eq('SOUL')
     end
   end
 end
