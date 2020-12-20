@@ -85,5 +85,5 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<GITHUB_CLIENT_ID>') { Rails.application.credentials.github[:client_id] }
   config.filter_sensitive_data('<GITHUB_CLIENT_SECRET>') { Rails.application.credentials.github[:client_secret] }
-  config.default_cassette_options = { re_record_interval: 7.days }
+  config.default_cassette_options = { re_record_interval: 30.days }
 end

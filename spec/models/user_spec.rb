@@ -10,8 +10,12 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_uniqueness_of(:uid).case_insensitive }
     it { is_expected.to validate_presence_of(:nickname) }
     it { is_expected.to validate_uniqueness_of(:nickname) }
-    it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to have_secure_token(:auth_token) }
+  end
+
+  describe 'relationships' do
+    it { is_expected.to have_many(:user_repos) }
+    it { is_expected.to have_many(:repos).through(:user_repos) }
   end
 
   describe 'class methods' do
@@ -37,7 +41,6 @@ RSpec.describe User, type: :model do
 
       it { expect(user.uid).to eq(mock_auth_hash['uid']) }
       it { expect(user.nickname).to eq(mock_auth_hash['info']['nickname']) }
-      it { expect(user.name).to eq(mock_auth_hash['info']['name']) }
       it { expect(user.image).to eq(mock_auth_hash['info']['image']) }
     end
   end
