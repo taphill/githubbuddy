@@ -3,9 +3,11 @@
 class User < ApplicationRecord
   validates :uid, presence: true, uniqueness: true
   validates :nickname, presence: true, uniqueness: true
-  validates :name, presence: true
 
   has_secure_token :auth_token
+
+  has_many :user_repos
+  has_many :repos, through: :user_repos
 
   def self.from_omniauth(auth_hash)
     find_by(uid: auth_hash['uid']) || create_from_omniauth(auth_hash)
@@ -15,7 +17,6 @@ class User < ApplicationRecord
     create do |user|
       user.uid = auth_hash['uid']
       user.nickname = auth_hash['info']['nickname']
-      user.name = auth_hash['info']['name']
       user.image = auth_hash['info']['image']
     end
   end

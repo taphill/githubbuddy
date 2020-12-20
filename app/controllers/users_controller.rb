@@ -2,8 +2,6 @@
 
 class UsersController < ApplicationController
   def index
-    redirect_to root_path unless current_user
-
-    @stars = UserFacade.user_stars(current_user.nickname)
+    @stars = current_user.repos
   end
 end
