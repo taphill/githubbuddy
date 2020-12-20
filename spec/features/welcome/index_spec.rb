@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Welcome/Index", type: :feature do
+RSpec.describe 'Welcome/Index', type: :feature do
   context 'when a user syncs their account' do
     before do
       login_user
