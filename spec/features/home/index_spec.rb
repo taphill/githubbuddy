@@ -28,8 +28,7 @@ RSpec.describe 'Home/Index', type: :feature do
           visit root_path
           click_link 'Sign in'
           expect(page).to have_current_path(welcome_index_path)
-          expect(page).to have_content('Hello adoug')
-          save_and_open_page
+          expect(page).to have_content('Hello adoug!')
         end
       end
     end
