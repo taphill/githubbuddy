@@ -6,8 +6,23 @@ class GitRepoService
   end
 
   def self.user_stars(user_nickname)
-    response = conn.get("/users/#{user_nickname}/starred")
+    stars = []
+    page_number = 0
 
-    JSON.parse(response.body, symbolize_names: true)
+    loop do
+      page_number += 1
+
+      response = conn.get("/users/#{user_nickname}/starred") do |req|
+        req.params['page'] = page_number
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      break if json.empty?
+
+      stars << json
+    end
+
+    stars.flatten
   end
 end
