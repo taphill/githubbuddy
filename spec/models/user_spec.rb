@@ -6,8 +6,8 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     subject { FactoryBot.build(:user) }
 
-    it { is_expected.to validate_presence_of(:uid) }
-    it { is_expected.to validate_uniqueness_of(:uid).case_insensitive }
+    it { is_expected.to validate_presence_of(:github_id) }
+    it { is_expected.to validate_uniqueness_of(:github_id) }
     it { is_expected.to validate_presence_of(:nickname) }
     it { is_expected.to validate_uniqueness_of(:nickname) }
     it { is_expected.to have_secure_token(:auth_token) }
@@ -39,7 +39,7 @@ RSpec.describe User, type: :model do
     describe '.create_from_omniauth' do
       let(:user) { described_class.create_from_omniauth(mock_auth_hash) }
 
-      it { expect(user.uid).to eq(mock_auth_hash['uid']) }
+      it { expect(user.github_id).to eq(mock_auth_hash['uid'].to_i) }
       it { expect(user.nickname).to eq(mock_auth_hash['info']['nickname']) }
       it { expect(user.image).to eq(mock_auth_hash['info']['image']) }
     end
