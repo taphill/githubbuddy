@@ -16,5 +16,7 @@ RSpec.describe Repo, type: :model do
   describe 'relationships' do
     it { is_expected.to have_many(:user_repos) }
     it { is_expected.to have_many(:users).through(:user_repos) }
+    it { is_expected.to have_many(:taggings) }
+    it { is_expected.to have_many(:tags).through(:taggings) }
   end
 end
