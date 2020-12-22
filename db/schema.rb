@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_215208) do
+ActiveRecord::Schema.define(version: 2020_12_22_225551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2020_12_22_215208) do
 
   create_table "taggings", force: :cascade do |t|
     t.bigint "tag_id", null: false
-    t.bigint "repo_id", null: false
+    t.bigint "user_repo_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["repo_id"], name: "index_taggings_on_repo_id"
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["user_repo_id"], name: "index_taggings_on_user_repo_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2020_12_22_215208) do
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
 
-  add_foreign_key "taggings", "repos"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "taggings", "user_repos"
   add_foreign_key "user_repos", "repos"
   add_foreign_key "user_repos", "users"
 end
