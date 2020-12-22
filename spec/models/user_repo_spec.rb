@@ -14,5 +14,7 @@ RSpec.describe UserRepo, type: :model do
   describe 'relationships' do
     it { is_expected.to belong_to(:user) }
     it { is_expected.to belong_to(:repo) }
+    it { is_expected.to have_many(:taggings) }
+    it { is_expected.to have_many(:tags).through(:taggings) }
   end
 end

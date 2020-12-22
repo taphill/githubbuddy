@@ -7,6 +7,6 @@ RSpec.describe Tag, type: :model do
 
   describe 'relationships' do
     it { is_expected.to have_many(:taggings) }
-    it { is_expected.to have_many(:repos).through(:taggings) }
+    it { is_expected.to have_many(:user_repos).through(:taggings) }
   end
 end
