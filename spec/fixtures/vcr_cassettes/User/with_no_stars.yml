@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sun, 20 Dec 2020 18:58:50 GMT
+      - Tue, 22 Dec 2020 19:03:13 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -59,15 +59,15 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '50'
       X-Ratelimit-Reset:
-      - '1608492027'
+      - '1608664906'
       X-Ratelimit-Used:
       - '10'
       Accept-Ranges:
       - bytes
       X-Github-Request-Id:
-      - BEA5:3072:17E6D65:38310C0:5FDF9EEA
+      - C5AE:3F90:E196F0:178A5DB:5FE242F1
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sun, 20 Dec 2020 18:58:50 GMT
+  recorded_at: Tue, 22 Dec 2020 19:03:13 GMT
 recorded_with: VCR 6.0.0
