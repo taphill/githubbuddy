@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/:nickname', to: 'users#index', as: 'user_root'
 
-  resources :tags, only: [:create]
+  resources :tags, only: [:create, :destroy]
   get '/tags/:repo_id/new', to: 'tags#new', as: 'new_tags'
   get '/tags/:repo_id/edit', to: 'tags#edit', as: 'edit_tags'
 

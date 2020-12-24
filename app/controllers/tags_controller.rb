@@ -20,7 +20,12 @@ class TagsController < ApplicationController
   end
 
   def edit
-    @user_star = UserRepo.find_by(user_id: current_user.id, repo_id: params[:repo_id])
+    @repo = Repo.find(params[:repo_id])
+    @user_repo = UserRepo.find_by(user_id: current_user.id, repo_id: params[:repo_id])
+  end
+
+  def destroy
+
   end
 
   private

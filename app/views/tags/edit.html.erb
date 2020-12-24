@@ -1,3 +1,25 @@
-<h1>Add Tags Here</h1>
+<div class="container mx-auto px-24 py-2 object-center">
+  <div class="text-center text-6xl text-bold pb-12">
+    <span>Remove some tags &#128578;</span>
+  </div>
 
-<%= link_to 'Go Home', user_root_path(current_user.nickname) %>
+  <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+    <%= link_to @repo.url do%>
+      <span class="text-xl text-blue-500"><%= @repo.owner %></span>
+      <span class="text-xl text-blue-500">/</span>
+      <span class="text-xl text-blue-500 font-bold"><%= @repo.name %></span>
+    <% end %>
+
+    <div class="pt-4 pb-8"><%= @repo.description %></div>
+  </div>
+
+  <div class="text-center text-xl pt-12">
+    <% @user_repo.tags.each do |tag| %>
+      <div id="<%= tag.name %>-tag">
+        <%= tag.name %>
+        <%= button_to 'Remove tag', tag_path(tag.id), method: :delete  %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
