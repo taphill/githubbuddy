@@ -51,7 +51,8 @@ RSpec.describe 'Tags/Edit', type: :feature do
         click_button 'Remove tag'
       end
 
-      expect(page).to have_current_path(user_root_path(user.nickname))
+      # click_link 'Go Home'
+      visit user_root_path(user.nickname)
 
       within(first('.user-star')) do
         expect(page).to have_content('ruby')

@@ -17,7 +17,7 @@
     <% @user_repo.tags.each do |tag| %>
       <div id="<%= tag.name %>-tag">
         <%= tag.name %>
-        <%= button_to 'Remove tag', tag_path(tag.id), method: :delete  %>
+        <%= button_to 'Remove tag', tag_path(tag.id), method: :delete, params: { user_repo_id: @user_repo.id } %>
       </div>
     <% end %>
   </div>
