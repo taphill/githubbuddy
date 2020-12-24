@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Tags/New", type: :feature do
+RSpec.describe 'Tags/New', type: :feature do
   context 'when a user clicks link to add a new tag' do
     let(:user) { create(:user, :with_repos) }
     let(:repo) { user.repos.first }
-    
+
     before do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     end
@@ -25,7 +27,7 @@ RSpec.describe "Tags/New", type: :feature do
       within(first('.user-star')) do
         click_link 'Add tags'
       end
-      
+
       fill_in :tags, with: 'ruby, rails, vim'
       click_button 'Add'
 

@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Repo, type: :model do
   describe 'validations' do
     subject { FactoryBot.build(:repo) }
-    
+
     it { is_expected.to validate_presence_of(:github_id) }
     it { is_expected.to validate_uniqueness_of(:github_id) }
     it { is_expected.to validate_presence_of(:name) }

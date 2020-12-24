@@ -16,7 +16,7 @@ class TagsController < ApplicationController
       user_tag.save
     end
 
-    redirect_to user_root_path(current_user.nickname) 
+    redirect_to user_root_path(current_user.nickname)
   end
 
   def edit
@@ -24,9 +24,7 @@ class TagsController < ApplicationController
     @user_repo = UserRepo.find_by(user_id: current_user.id, repo_id: params[:repo_id])
   end
 
-  def destroy
-
-  end
+  def destroy; end
 
   private
 
