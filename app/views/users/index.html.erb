@@ -10,22 +10,48 @@
           <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
         <% end %>
 
-        <div class="pt-4 pb-8"><%= star.description %></div>
+        <div class="pt-4 pb-4"><%= star.description %></div>
 
-        <div class="pb-4">
-          <% link_to new_tags_path(star.id) do%>
-            <div class="border-2 border-pink-500 hover:bg-pink-200 text-center w-48 px-4 py-2 rounded-2xl">
-              Add tags
-            </div>
-          <% end %>
-        </div>
+        <% unless star.tags.empty? %>
+          <div class="pb-4">
+            <ul class="flex flex-row">
+              <% star.tags.each do |tag| %>
+                <div class="pr-4">
+                  <li class="border-2 border-blue-300 bg-blue-200 text-center p-2 rounded-md shadow-sm">
+                    <%= tag.name %>
+                  </li>
+                </div>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-        <div class="pb-4">
-          <%= link_to new_tags_path(star.id) do%>
-            <div class="border-2 border-pink-500 hover:bg-pink-200 text-center w-48 px-4 py-2 rounded-2xl">
-              Add tags
-            </div>
-          <% end %>
+        <div class="pb-6">
+          <ul class="flex flex-row text-center text-gray-500">
+            <%= link_to new_tags_path(star.id) do%>
+              <div class="pr-4">
+                <li class="border-2 border-gray-300 hover:bg-gray-200 w-32 p-2 rounded-2xl shadow-md">
+                  Add tags
+                </li>
+              </div>
+            <% end %>
+
+            <%= link_to edit_tags_path(star.id) do%>
+              <div class="pr-4">
+                <li class="border-2 border-gray-300 hover:bg-gray-200 w-32 p-2 rounded-2xl shadow-md">
+                  Edit tags
+                </li>
+              </div>
+            <% end %>
+
+            <%= link_to new_tags_path(star.id) do%>
+              <div class="pr-4">
+                <li class="border-2 border-gray-300 hover:bg-gray-200 w-32 p-2 rounded-2xl shadow-md">
+                  Delete tags
+                </li>
+              </div>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
