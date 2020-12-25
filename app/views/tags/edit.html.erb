@@ -13,17 +13,17 @@
     <div class="pt-4 pb-8"><%= @repo.description %></div>
   </div>
 
-  <div class="border-4 border-solid border-opacity-25">
+  <div class="border-4 border-solid border-opacity-25 pt-4 pb-4">
     <% @user_repo.tags.each do |tag| %>
       <div id="<%= tag.name %>-tag" class="p-2">
-        <ul class="flex flew-row space-x-32">
+        <ul class="flex flew-row space-x-64">
           <li class="container mx-auto text-right pt-2 pb-2">
             <span class="border-2 border-blue-300 bg-blue-200 text-center p-2 rounded-md shadow-sm">
               <%= tag.name %>
             </span>
           </li>
           <li class="container mx-auto text-left text-gray-100">
-            <%= button_to 'Remove tag', tag_path(tag.id), method: :delete, params: { user_repo_id: @user_repo.id }, class: 'border-2 border-gray-500 hover:bg-gray-300 hover:text-black bg-gray-500 w-32 p-1 rounded-2xl' %>
+            <%= button_to 'Remove tag', tag_path(tag.id), method: :delete, params: { user_repo_id: @user_repo.id }, class: 'border-2 border-gray-500 hover:bg-gray-300 hover:text-black bg-gray-500 w-32 p-2 rounded-2xl' %>
           </li>
         </ul>
       </div>
