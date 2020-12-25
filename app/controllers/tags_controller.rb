@@ -10,10 +10,10 @@ class TagsController < ApplicationController
     tags = tag_params[:tags].split(/\s*,\s*/)
 
     tags.each do |tag|
-      x = Tag.find_or_create_by!(name: tag.downcase)
+      user_tag = Tag.find_or_create_by!(name: tag.downcase)
 
-      user_tag = Tagging.new(tag_id: x.id, user_repo_id: tag_params[:user_repo_id])
-      user_tag.save
+      tagging = Tagging.new(tag_id: user_tag.id, user_repo_id: tag_params[:user_repo_id])
+      tagging.save
     end
 
     redirect_to user_root_path(current_user.nickname)
