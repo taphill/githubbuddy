@@ -1,6 +1,10 @@
 <% if @stars.empty? %>
   <%= render 'users/no_stars' %>
 <% else %>
+  <% current_user.user_repos[0].tags.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
+
   <% @stars.each do |star| %>
     <div class="user-star">
       <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">

@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :tagging do
     tag
-    repo
+    user_repo
   end
 end

@@ -20,4 +20,9 @@ class User < ApplicationRecord
       user.image = auth_hash['info']['image']
     end
   end
+
+  def user_tags
+require 'pry'; binding.pry
+    joins(user_repos: [taggings: :tag])
+  end
 end

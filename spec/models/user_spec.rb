@@ -44,4 +44,23 @@ RSpec.describe User, type: :model do
       it { expect(user.image).to eq(mock_auth_hash['info']['image']) }
     end
   end
+
+  describe 'instance methods' do
+    describe '#tags' do
+      it 'returns all user tags' do
+        user1 = create(:user, :with_repos, repo_count: 3)
+        create(:tagging, user_repo_id: user1.user_repos[0].id)
+        create(:tagging, user_repo_id: user1.user_repos[1].id)
+        create(:tagging, user_repo_id: user1.user_repos[2].id)
+
+        user2 = create(:user, :with_repos, repo_count: 3)
+        create(:tagging, user_repo_id: user2.user_repos[0].id)
+        create(:tagging, user_repo_id: user2.user_repos[1].id)
+        create(:tagging, user_repo_id: user2.user_repos[2].id)
+
+
+        expect(user1.user_tags).to eq([])
+      end
+    end
+  end
 end
