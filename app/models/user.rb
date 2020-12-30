@@ -21,8 +21,16 @@ class User < ApplicationRecord
     end
   end
 
-  def user_tags
-require 'pry'; binding.pry
-    joins(user_repos: [taggings: :tag])
+  def tags
+    User.joins(user_repos: [taggings: :tag])
+        .select('tags.name')
+        .where(id: id)
+        .pluck('tags.name')
+  end
+
+  def repos_with_tag(tag_name)
+    Repo.joins(user_repos: [taggings: :tag])
+        .where(user_repos: { user_id: id })
+        .where(tags: { name: tag_name })
   end
 end
