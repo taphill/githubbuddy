@@ -11,11 +11,11 @@ class Repo < ApplicationRecord
   has_many :tags, through: :user_repos
 
   def self.search(query:, user_id:)
-    words = query.downcase.gsub(/[^0-9a-z ]/, '').gsub(' ', '|')
+    words = query.downcase.gsub(/[^0-9a-z ]/, '').tr(' ', '|')
     search = "%(#{words})%"
 
     joins(:user_repos)
-    .where(user_repos: { user_id: user_id })
-    .where('name SIMILAR TO ?', search)
+      .where(user_repos: { user_id: user_id })
+      .where('name SIMILAR TO ?', search)
   end
 end
