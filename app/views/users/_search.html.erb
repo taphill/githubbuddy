@@ -1,0 +1,8 @@
+<div class="container mx-auto px-24 pt-4 pb-4 object-center">
+  <div class="container mx-auto text-right bg-gray-100 p-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+    <%= form_with url: user_root_path(current_user.nickname), method: :get, local: true do |form| %>
+      <%= form.text_field :query, placeholder: 'Search for repos' %>
+      <%= form.submit 'Search' %>
+    <% end %>
+  </div>
+</div>

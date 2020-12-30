@@ -1,6 +1,7 @@
 <% if @stars.empty? %>
   <%= render 'users/no_stars' %>
 <% else %>
+  <%= render 'users/search' %>
   <%= render 'users/tag_cloud' %>
   <%= render 'users/repos' %>
 <% end %>
