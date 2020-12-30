@@ -3,6 +3,7 @@
 class UsersController < ApplicationController
   def index
     @stars = user_stars
+    @query = params[:query]
   end
 
   private
