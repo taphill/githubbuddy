@@ -11,7 +11,7 @@ class Repo < ApplicationRecord
   has_many :tags, through: :user_repos
 
   def self.search(query:, user_id:)
-    words = query.downcase.gsub(/[^0-9a-z ]/, '').tr(' ', '|')
+    words = query.split.join(' ').downcase.gsub(/[^0-9a-z ]/, '').tr(' ', '|')
     search = "%(#{words})%"
 
     joins(:user_repos)

@@ -37,7 +37,10 @@ RSpec.describe Repo, type: :model do
         create(:user_repo, user: user1, repo: repo4)
         create(:user_repo, user: user2, repo: repo5)
 
-        expect(Repo.search(query: '!LuA, %&vIm', user_id: user1.id)).to eq([repo1, repo2, repo3])
+        query = '!L)u*A,      %&vIm'
+        expected = [repo1, repo2, repo3]
+
+        expect(Repo.search(query: query, user_id: user1.id)).to eq(expected)
       end
     end
   end
