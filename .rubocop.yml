@@ -15,6 +15,8 @@ AllCops:
     - 'log/**/*'
     - 'node_modules/**/*'
     - 'public/**/*'
+    - 'spec/factories/*'
+    - 'spec/rails_helper.rb'
     - 'tmp/**/*'
     - 'vendor/**/*'
     - './*'
@@ -27,6 +29,12 @@ Metrics/BlockLength:
 
 RSpec/NestedGroups:
   Max: 4
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
 
 Capybara/FeatureMethods:
   EnabledMethods:
