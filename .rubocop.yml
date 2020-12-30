@@ -27,6 +27,9 @@ Style/Documentation:
 Metrics/BlockLength:
   Enabled: false
 
+RSpec/DescribedClass:
+  Enabled: false
+
 RSpec/NestedGroups:
   Max: 4
 
