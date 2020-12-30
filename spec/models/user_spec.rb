@@ -47,19 +47,40 @@ RSpec.describe User, type: :model do
 
   describe 'instance methods' do
     describe '#tags' do
-      it 'returns all user tags' do
+      it 'returns an array user tag names' do
         user1 = create(:user, :with_repos, repo_count: 3)
-        create(:tagging, user_repo_id: user1.user_repos[0].id)
-        create(:tagging, user_repo_id: user1.user_repos[1].id)
-        create(:tagging, user_repo_id: user1.user_repos[2].id)
-
         user2 = create(:user, :with_repos, repo_count: 3)
-        create(:tagging, user_repo_id: user2.user_repos[0].id)
-        create(:tagging, user_repo_id: user2.user_repos[1].id)
-        create(:tagging, user_repo_id: user2.user_repos[2].id)
 
+        tag1 = create(:tag, name: 'ruby')
+        tag2 = create(:tag, name: 'vim')
+        tag3 = create(:tag, name: 'shell')
 
-        expect(user1.user_tags).to eq([])
+        create(:tagging, tag_id: tag1.id, user_repo_id: user1.user_repos[0].id)
+        create(:tagging, tag_id: tag2.id, user_repo_id: user1.user_repos[1].id)
+        create(:tagging, tag_id: tag1.id, user_repo_id: user1.user_repos[2].id)
+        create(:tagging, tag_id: tag3.id, user_repo_id: user2.user_repos[0].id)
+
+        expect(user1.tags).to eq(['ruby', 'vim', 'ruby'])
+        expect(user2.tags).to eq(['shell'])
+      end
+    end
+
+    describe '#repos_with_tag(tag_name)' do
+      it 'returns all repos with a specific tag' do
+        user1 = create(:user, :with_repos, repo_count: 3)
+        user2 = create(:user, :with_repos, repo_count: 3)
+
+        tag1 = create(:tag, name: 'ruby')
+        tag2 = create(:tag, name: 'vim')
+        tag3 = create(:tag, name: 'shell')
+
+        create(:tagging, tag_id: tag1.id, user_repo_id: user1.user_repos[0].id)
+        create(:tagging, tag_id: tag2.id, user_repo_id: user1.user_repos[1].id)
+        create(:tagging, tag_id: tag1.id, user_repo_id: user1.user_repos[2].id)
+        create(:tagging, tag_id: tag3.id, user_repo_id: user2.user_repos[0].id)
+        create(:tagging, tag_id: tag1.id, user_repo_id: user2.user_repos[1].id)
+
+        expect(user1.repos_with_tag('ruby')).to eq([user1.repos[0], user1.repos[2]])
       end
     end
   end
