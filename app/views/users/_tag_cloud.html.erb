@@ -1,29 +1,31 @@
-<div class="container mx-auto px-24 pt-4 pb-12 object-center">
-  <div class="container mx-auto bg-gray-100 p-4 shadow-md rounded-lg border-4 border-gray-200">
-    <div class="pt-2">
-      <ul class="flex flex-row flex-wrap">
-        <div>
-          <li class="container mx-auto pr-4 pb-2">
-            <%= button_to 'Show all',
-                user_root_path(current_user.nickname),
-                method: :get,
-                class: 'border-2 border-red-300 hover:bg-red-100 hover:text-black bg-red-300 p-2 rounded-md'
-            %>
-          </li>
-        </div>
-        <% current_user.tags.uniq.sort.each do |tag| %>
+<% unless current_user.tags.empty? %>
+  <div class="container mx-auto px-24 pt-4 pb-12 object-center">
+    <div class="container mx-auto bg-gray-100 p-4 shadow-md rounded-lg border-4 border-gray-200">
+      <div class="pt-2">
+        <ul class="flex flex-row flex-wrap">
           <div>
             <li class="container mx-auto pr-4 pb-2">
-              <%= button_to tag,
-                  user_root_path(current_user.nickname), 
+              <%= button_to 'Show all',
+                  user_root_path(current_user.nickname),
                   method: :get,
-                  params: { tag: tag }, 
-                  class: 'border-2 border-green-300 hover:bg-green-100 hover:text-black bg-green-300 p-2 rounded-md'
+                  class: 'border-2 border-red-300 hover:bg-red-100 hover:text-black bg-red-300 p-2 rounded-md'
               %>
             </li>
           </div>
-        <% end %>
-      </ul>
+          <% current_user.tags.uniq.sort.each do |tag| %>
+            <div>
+              <li class="container mx-auto pr-4 pb-2">
+                <%= button_to tag,
+                    user_root_path(current_user.nickname), 
+                    method: :get,
+                    params: { tag: tag }, 
+                    class: 'border-2 border-green-300 hover:bg-green-100 hover:text-black bg-green-300 p-2 rounded-md'
+                %>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

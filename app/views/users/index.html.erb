@@ -1,11 +1,9 @@
 <% if @query && @stars.empty? %>
-  <%= render 'users/search' %>
   <%= render 'users/tag_cloud' %>
   <%= render 'users/no_results' %>
 <% elsif @stars.empty? %>
   <%= render 'users/no_stars' %>
 <% else %>
-  <%= render 'users/search' %>
   <%= render 'users/tag_cloud' %>
   <%= render 'users/repos' %>
 <% end %>
