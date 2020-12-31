@@ -16,6 +16,6 @@ class Repo < ApplicationRecord
 
     joins(:user_repos)
       .where(user_repos: { user_id: user_id })
-      .where('name SIMILAR TO ?', search)
+      .where('LOWER(name) SIMILAR TO ?', search)
   end
 end
