@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'faraday'
+gem "nokogiri", ">= 1.11.0.rc4"
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
