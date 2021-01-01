@@ -21,13 +21,13 @@ RSpec.describe Repo, type: :model do
 
   describe 'instance methods' do
     describe '.search(query)' do
-      it 'returns all user repos that match similar to the query ignoring special characters' do
+      it 'returns all user repos similar to the query ignoring special characters' do
         user1 = create(:user)
         user2 = create(:user)
 
         repo1 = create(:repo, name: 'vim')
         repo2 = create(:repo, name: 'nvim-lua-guide')
-        repo3 = create(:repo, name: 'lua')
+        repo3 = create(:repo, owner: 'awesomeluadev')
         repo4 = create(:repo, name: 'fzf')
         repo5 = create(:repo, name: 'not-vim')
 
