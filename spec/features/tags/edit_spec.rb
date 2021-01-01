@@ -12,6 +12,8 @@ RSpec.describe 'Tags/Edit', type: :feature do
     end
 
     it 'routes to the edit tags page' do
+      create(:tagging, user_repo: user.user_repos[0])
+
       visit user_root_path(user.nickname)
 
       within(first('.user-star')) do
@@ -22,43 +24,23 @@ RSpec.describe 'Tags/Edit', type: :feature do
     end
 
     it 'allows user to remove tags' do
+      tag = create(:tag, name: 'ruby')
+      create(:tagging, tag: tag, user_repo: user.user_repos[0])
+
       visit user_root_path(user.nickname)
 
       within(first('.user-star')) do
-        click_link 'Add tags'
-      end
-
-      fill_in :tags, with: 'ruby, rails, vim'
-      click_button 'Add'
-
-      within(first('.user-star')) do
         expect(page).to have_content('ruby')
-        expect(page).to have_content('rails')
-        expect(page).to have_content('vim')
-      end
-
-      within(first('.user-star')) do
         click_link 'Remove tags'
       end
 
-      expect(page).to have_current_path(edit_tags_path(repo.id))
-
-      within('#rails-tag') do
+      within("#ruby-tag") do
         click_button 'Remove tag'
       end
 
-      within('#vim-tag') do
-        click_button 'Remove tag'
-      end
+      click_link 'Done'
 
-      # click_link 'Go Home'
-      visit user_root_path(user.nickname)
-
-      within(first('.user-star')) do
-        expect(page).to have_content('ruby')
-        expect(page).not_to have_content('rails')
-        expect(page).not_to have_content('vim')
-      end
+      expect(Tagging.all).to eq([])
     end
   end
 end

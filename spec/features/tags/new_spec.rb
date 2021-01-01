@@ -28,7 +28,7 @@ RSpec.describe 'Tags/New', type: :feature do
         click_link 'Add tags'
       end
 
-      fill_in :tags, with: 'ruby, rails, vim'
+      fill_in :tags, with: 'ruby, rails, vim, this repo is awesome'
       click_button 'Add'
 
       expect(page).to have_current_path(user_root_path(user.nickname))
@@ -37,6 +37,7 @@ RSpec.describe 'Tags/New', type: :feature do
         expect(page).to have_content('ruby')
         expect(page).to have_content('rails')
         expect(page).to have_content('vim')
+        expect(page).to have_content('this repo is awesome')
       end
     end
   end
