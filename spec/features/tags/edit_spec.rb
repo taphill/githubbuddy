@@ -35,7 +35,7 @@ RSpec.describe 'Tags/Edit', type: :feature do
         click_link 'Remove tags'
       end
 
-      within("#ruby-tag") do
+      within('#ruby-tag') do
         click_button 'Remove tag'
       end
 

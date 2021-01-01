@@ -20,25 +20,25 @@ RSpec.describe User, type: :model do
 
   describe 'class methods' do
     describe '.from_omniauth' do
-      let (:auth_hash) do
+      let(:auth_hash) do
         OmniAuth::AuthHash.new({
-          'provider' => 'github',
-          'uid' => '1285456',
-          'info' => {
-            'nickname' => 'adoug',
-            'email' => 'adouglas@example.com',
-            'name' => 'Aditya Douglas',
-            'image' => 'https://static.thenounproject.com/png/340719-200.png'
-          },
-          'credentials' => {
-            'token' => 'e596f957145e7b9c14',
-            'expires' => 'false'
-          }
-        })
+                                 'provider' => 'github',
+                                 'uid' => '1285456',
+                                 'info' => {
+                                   'nickname' => 'adoug',
+                                   'email' => 'adouglas@example.com',
+                                   'name' => 'Aditya Douglas',
+                                   'image' => 'https://static.thenounproject.com/png/340719-200.png'
+                                 },
+                                 'credentials' => {
+                                   'token' => 'e596f957145e7b9c14',
+                                   'expires' => 'false'
+                                 }
+                               })
       end
 
       it 'retrieves an existing user' do
-        user = create(:user, github_id: 1285456)
+        user = create(:user, github_id: 1_285_456)
         omniauth_user = User.from_omniauth(auth_hash)
 
         expect(user).to eq(omniauth_user)
@@ -49,7 +49,7 @@ RSpec.describe User, type: :model do
         User.from_omniauth(auth_hash)
 
         expect(User.count).to eq(1)
-        expect(User.first.github_id).to eq(1285456)
+        expect(User.first.github_id).to eq(1_285_456)
         expect(User.first.nickname).to eq('adoug')
         expect(User.first.image).to eq('https://static.thenounproject.com/png/340719-200.png')
       end
@@ -71,7 +71,7 @@ RSpec.describe User, type: :model do
         create(:tagging, tag_id: tag1.id, user_repo_id: user1.user_repos[2].id)
         create(:tagging, tag_id: tag3.id, user_repo_id: user2.user_repos[0].id)
 
-        expect(user1.tags).to eq(['ruby', 'vim', 'ruby'])
+        expect(user1.tags).to eq(%w[ruby vim ruby])
         expect(user2.tags).to eq(['shell'])
       end
     end
