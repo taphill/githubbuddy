@@ -12,7 +12,8 @@ RSpec.describe 'Tags/Edit', type: :feature do
     end
 
     it 'routes to the edit tags page' do
-      create(:tagging, user_repo: user.user_repos[0])
+      tag = create(:tag, name: 'ruby')
+      create(:tagging, tag: tag, user_repo: user.user_repos[0])
 
       visit user_root_path(user.nickname)
 
