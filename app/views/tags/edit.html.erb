@@ -1,3 +1,41 @@
-<h1>Add Tags Here</h1>
+<div class="container mx-auto px-24 py-2 object-center">
+  <div class="text-center text-6xl text-bold pb-12">
+    <span>Remove tags</span>
+  </div>
 
-<%= link_to 'Go Home', user_root_path(current_user.nickname) %>
+  <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+    <%= link_to @repo.url do%>
+      <span class="text-xl text-blue-500"><%= @repo.owner %></span>
+      <span class="text-xl text-blue-500">/</span>
+      <span class="text-xl text-blue-500 font-bold"><%= @repo.name %></span>
+    <% end %>
+
+    <div class="pt-4 pb-8"><%= @repo.description %></div>
+  </div>
+
+  <div class="border-4 border-solid border-opacity-25 pt-4 pb-4">
+    <% @user_repo.tags.each do |tag| %>
+      <div id="<%= tag.name %>-tag" class="p-2">
+        <ul class="flex flew-row space-x-64">
+          <li class="container mx-auto text-right pt-2 pb-2">
+            <span class="border-2 border-blue-300 bg-blue-200 text-center p-2 rounded-md shadow-sm">
+              <%= tag.name %>
+            </span>
+          </li>
+          <li class="container mx-auto text-left text-gray-100">
+            <%= button_to 'Remove tag', tag_path(tag.id), method: :delete, params: { user_repo_id: @user_repo.id }, class: 'border-2 border-gray-500 hover:bg-gray-300 hover:text-black bg-gray-500 w-32 p-2 rounded-2xl' %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="container mx-auto p-12 object-center">
+    <%= link_to user_root_path(current_user.nickname) do %>
+      <div class="container mx-auto border-2 border-pink-500 bg-pink-500 hover:bg-pink-300 text-center text-gray-100 hover:text-black w-64 p-2 rounded-2xl">
+        <span class="text-lg">Done</span>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>

@@ -13,7 +13,7 @@ class SyncFacade
   end
 
   def self.find_or_create_repo(data)
-    Repo.find_or_create_by(github_id: data[:id]) do |repo|
+    Repo.find_or_create_by!(github_id: data[:id]) do |repo|
       repo.name = data[:name]
       repo.owner = data[:owner][:login]
       repo.url = data[:html_url]

@@ -1,26 +1,9 @@
-<% if @stars.empty? %>
+<% if @query && @stars.empty? %>
+  <%= render 'users/tag_cloud' %>
+  <%= render 'users/no_results' %>
+<% elsif @stars.empty? %>
   <%= render 'users/no_stars' %>
 <% else %>
-  <% @stars.each do |star| %>
-    <div class="user-star">
-      <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
-        <%= link_to star.url do%>
-          <span class="text-xl text-blue-500"><%= star.owner %></span>
-          <span class="text-xl text-blue-500">/</span>
-          <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
-        <% end %>
-
-        <div class="pt-4 pb-8"><%= star.description %></div>
-
-        <div class="pb-4">
-          <%= link_to tags_edit_path(star.name, params: { star: star }) do%>
-            <div class="border-2 border-pink-500 hover:bg-pink-200 text-center w-48 px-4 py-2 rounded-2xl">
-              Add tags
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <br>
-  <% end %>
+  <%= render 'users/tag_cloud' %>
+  <%= render 'users/repos' %>
 <% end %>

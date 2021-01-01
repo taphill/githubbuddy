@@ -1,0 +1,35 @@
+<div class="container mx-auto px-24 py-2 object-center">
+  <div class="text-center text-6xl text-bold pb-12">
+    <span>Add some tags &#128578;</span>
+  </div>
+
+  <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+    <%= link_to @repo.url do%>
+      <span class="text-xl text-blue-500"><%= @repo.owner %></span>
+      <span class="text-xl text-blue-500">/</span>
+      <span class="text-xl text-blue-500 font-bold"><%= @repo.name %></span>
+    <% end %>
+
+    <div class="pt-4 pb-8"><%= @repo.description %></div>
+  </div>
+
+  <div class="text-center text-xl pt-12">
+    If you're adding multiple tags use a comma seperated list.
+  </div>
+
+  <div class="container mx-auto pt-4 pb-6 object-center">
+    <%= form_with url: tags_path, method: :post do |form| %>
+      <div class="container mx-auto bg-blue-200 text-center p-4 rounded-md shadow-md">
+        <span class="text-xl"><%= form.label :tags %>:</span>
+        <%= form.text_field :tags, size: 50, placeholder: 'ruby, rails, etc.' %>
+      </div>
+      <br>
+      <br>
+      <div class="container mx-auto text-center text-xl text-gray-100">
+        <%= form.submit 'Add', class: 'border-2 border-gray-500 hover:bg-gray-300 hover:text-black bg-gray-500 w-64 p-2 rounded-2xl'%>
+      </div>
+      <%= form.hidden_field :user_repo_id, value: @user_repo.id %>
+    <% end %>
+  </div>
+</div>
+<br>
