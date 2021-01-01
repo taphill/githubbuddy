@@ -20,28 +20,39 @@ RSpec.describe User, type: :model do
 
   describe 'class methods' do
     describe '.from_omniauth' do
-      context 'when the user already exists it returns the user' do
-        # Create user
-        let(:user_created) { described_class.create_from_omniauth(mock_auth_hash) }
-
-        # Make sure we are finding that user
-        let(:user_found) { described_class.from_omniauth(user_created) }
-
-        it { expect(user_found).to be_a(described_class) }
-        it { expect(user_found).to eq(user_created) }
+      let (:auth_hash) do
+        OmniAuth::AuthHash.new({
+          'provider' => 'github',
+          'uid' => '1285456',
+          'info' => {
+            'nickname' => 'adoug',
+            'email' => 'adouglas@example.com',
+            'name' => 'Aditya Douglas',
+            'image' => 'https://static.thenounproject.com/png/340719-200.png'
+          },
+          'credentials' => {
+            'token' => 'e596f957145e7b9c14',
+            'expires' => 'false'
+          }
+        })
       end
 
-      context 'when the user does not exist it creates a new user' do
-        it { expect(described_class.from_omniauth(mock_auth_hash)).to eq(described_class.all.first) }
+      it 'retrieves an existing user' do
+        user = create(:user, github_id: 1285456)
+        omniauth_user = User.from_omniauth(auth_hash)
+
+        expect(user).to eq(omniauth_user)
       end
-    end
 
-    describe '.create_from_omniauth' do
-      let(:user) { described_class.create_from_omniauth(mock_auth_hash) }
+      it 'creates a new user if one does not exist' do
+        expect(User.count).to eq(0)
+        User.from_omniauth(auth_hash)
 
-      it { expect(user.github_id).to eq(mock_auth_hash['uid'].to_i) }
-      it { expect(user.nickname).to eq(mock_auth_hash['info']['nickname']) }
-      it { expect(user.image).to eq(mock_auth_hash['info']['image']) }
+        expect(User.count).to eq(1)
+        expect(User.first.github_id).to eq(1285456)
+        expect(User.first.nickname).to eq('adoug')
+        expect(User.first.image).to eq('https://static.thenounproject.com/png/340719-200.png')
+      end
     end
   end
 
