@@ -20,8 +20,7 @@
   <div class="container mx-auto pt-4 pb-6 object-center">
     <%= form_with url: tags_path, method: :post do |form| %>
       <div class="container mx-auto bg-blue-200 text-center p-4 rounded-md shadow-md">
-        <span class="text-xl"><%= form.label :tags %>:</span>
-        <%= form.text_field :tags, size: 50, placeholder: 'ruby, rails, etc.' %>
+        <%= form.text_field :tags, size: 50, placeholder: 'ruby, rails, etc.', class: 'rounded-md p-2' %>
       </div>
       <br>
       <br>
