@@ -25,12 +25,10 @@ A better way to manage your favorite repositories.
 <img src="https://i.ibb.co/wNwnpkJ/ghb-auth.png" alt="ghb-auth">
 
 ### Sync Your Account
-<img src="https://i.ibb.co/b2RyfnK/ghb-sync.png" alt="ghb-sync">
-\
+<img src="https://i.ibb.co/b2RyfnK/ghb-sync.png" alt="ghb-sync"><br/>
 
 ### Start Organizing
-<img src="https://i.ibb.co/55xzFLh/ghb-tags.png" alt="ghb-tags">
-\
+<img src="https://i.ibb.co/55xzFLh/ghb-tags.png" alt="ghb-tags"><br/>
 
 ## Overview
 
