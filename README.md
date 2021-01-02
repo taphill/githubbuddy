@@ -29,7 +29,6 @@ A better way to manage your favorite repositories.
   
 ### Start Organizing
 <img src="https://i.ibb.co/55xzFLh/ghb-tags.png" alt="ghb-tags">
-$~~~~~~~~~~~$
 
 ## Overview
 
