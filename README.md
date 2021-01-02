@@ -24,12 +24,12 @@ A better way to manage your favorite repositories.
 <img src="https://i.ibb.co/HpxcpVc/ghb-signin.png" alt="ghb-signin">
 <img src="https://i.ibb.co/wNwnpkJ/ghb-auth.png" alt="ghb-auth">
 
-### Sync Your Account. 
+### Sync Your Account
 <img src="https://i.ibb.co/b2RyfnK/ghb-sync.png" alt="ghb-sync">
-
-### Start Organizing. 
+  
+### Start Organizing
 <img src="https://i.ibb.co/55xzFLh/ghb-tags.png" alt="ghb-tags">
-
+  
 ## Overview
 
 GitHub Buddy in an app created with Ruby on Rails and is currently hosted on Heroku. The goal of this project is to provide users with an easier way organize their favorite repos and stay up to date with the latest releases. On a personal note, this project will serve as a deep exploration of rails and webpack for myself while building something I believe people may find useful! The eventual goal is allow folks to contribute to this project and suggest features that will enhance the overall user experience.
