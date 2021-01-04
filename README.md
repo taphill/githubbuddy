@@ -8,6 +8,7 @@ A better way to manage your favorite repositories.
 
 ## Table of contents
 
+* [Getting Started](#getting-started)
 * [Overivew](#overview)
   * [Design](#design)
 * [Contribution](#contribution)
@@ -16,6 +17,18 @@ A better way to manage your favorite repositories.
   * [Ruby](#ruby)
   * [Bundler](#Bundler)
 * [Project Blog](#project-blog)
+
+## Getting Started
+
+### Authenticate with GitHub
+<img src="https://i.ibb.co/HpxcpVc/ghb-signin.png" alt="ghb-signin">
+<img src="https://i.ibb.co/wNwnpkJ/ghb-auth.png" alt="ghb-auth">
+
+### Sync Your Account
+<img src="https://i.ibb.co/b2RyfnK/ghb-sync.png" alt="ghb-sync">
+  
+### Start Organizing
+<img src="https://i.ibb.co/55xzFLh/ghb-tags.png" alt="ghb-tags">
 
 ## Overview
 
