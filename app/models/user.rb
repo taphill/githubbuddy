@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_secure_token :auth_token
 
-  has_many :user_repos
+  has_many :user_repos, dependent: :destroy
   has_many :repos, through: :user_repos
 
   def self.from_omniauth(auth_hash)

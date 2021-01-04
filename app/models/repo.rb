@@ -6,7 +6,7 @@ class Repo < ApplicationRecord
   validates :owner, presence: true
   validates :url, presence: true
 
-  has_many :user_repos
+  has_many :user_repos, dependent: :destroy
   has_many :users, through: :user_repos
   has_many :tags, through: :user_repos
 
