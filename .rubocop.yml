@@ -27,7 +27,17 @@ Style/Documentation:
 Metrics/BlockLength:
   Enabled: false
 
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/Capybara/FeatureMethods:
+  EnabledMethods:
+    - 'scenario'
+
 RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/ExampleLength:
   Enabled: false
 
 RSpec/NestedGroups:
@@ -35,10 +45,3 @@ RSpec/NestedGroups:
 
 RSpec/MultipleExpectations:
   Enabled: false
-
-RSpec/ExampleLength:
-  Enabled: false
-
-Capybara/FeatureMethods:
-  EnabledMethods:
-    - 'scenario'
