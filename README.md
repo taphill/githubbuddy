@@ -41,6 +41,8 @@ This high level model overview is the initial design for GitHub Buddy and highli
 
 ## Contribution
 
+Before getting started please take a moment to review our [code of conduct](https://github.com/taphill/githubbuddy/blob/main/CODE_OF_CONDUCT.md).
+
 This application currently uses Rails 6.1.0.0 and Ruby 2.7.2. To contribute please fork this repo and then clone it to your local machine.
 
 To get your dev environment setup please make sure you have all of the following:
