@@ -1,5 +1,5 @@
-<% @stars.each do |star| %>
-  <div class="user-star">
+<div class="grid grid-cols-2 gap-8 p-8">
+  <% @stars.each do |star| %>
     <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
       <%= link_to star.url do%>
         <span class="text-xl text-blue-500"><%= star.owner %></span>
@@ -7,7 +7,7 @@
         <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
       <% end %>
 
-      <div class="pt-4 pb-4"><%= star.description %></div>
+      <div class="pt-4 pb-4 pr-4"><%= star.description %></div>
 
       <% unless star.tags.empty? %>
         <div class="pb-4">
@@ -23,11 +23,11 @@
         </div>
       <% end %>
 
-      <div class="pb-6">
+      <div class="pb-4">
         <ul class="flex flex-row text-center text-gray-500">
           <%= link_to new_tags_path(star.id) do%>
             <div class="pr-4">
-              <li class="border-2 border-gray-300 hover:bg-gray-200 w-32 p-2 rounded-2xl shadow-md">
+              <li class="border-2 border-gray-300 hover:bg-gray-200 w-32 p-1 rounded-md">
                 Add tags
               </li>
             </div>
@@ -36,7 +36,7 @@
           <% unless star.tags.empty? %>
             <%= link_to edit_tags_path(star.id) do%>
               <div class="pr-4">
-                <li class="border-2 border-gray-300 hover:bg-gray-200 w-32 p-2 rounded-2xl shadow-md">
+                <li class="border-2 border-gray-300 hover:bg-gray-200 w-32 p-1 rounded-md">
                   Remove tags
                 </li>
               </div>
@@ -45,6 +45,5 @@
         </ul>
       </div>
     </div>
-  </div>
-  <br>
-<% end %>
+  <% end %>
+</div>
