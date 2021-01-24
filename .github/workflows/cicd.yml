@@ -7,7 +7,7 @@ on:
     branches: '*'
 
 jobs:    
-  test:
+  Test:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -75,3 +75,19 @@ jobs:
         env:
           RAILS_ENV: development
         run: bundle exec rubocop
+
+  Deploy:
+    if: ${{ github.event_name == 'push' $$ github.ref == 'ref/heads/main' }}
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy ot Heroku
+        uses: akhileshns/heroku-deploy@v3.8.9
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: 'salty-forest-83462'
+          heroku_email: 'taylorscottphillips@gmail.com'
