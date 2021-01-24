@@ -69,5 +69,5 @@ jobs:
       - name: Lint
         env:
           RAILS_ENV: development
-        run: 'bundle exec rubocop'
+        run: bundle exec rubocop
        
