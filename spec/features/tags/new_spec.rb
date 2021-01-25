@@ -21,7 +21,7 @@ RSpec.describe 'Tags/New', type: :feature do
       expect(page).to have_current_path(new_tags_path(repo.id))
     end
 
-    it 'allows user to add tags' do
+    xit 'allows user to add tags' do
       visit user_root_path(user.nickname)
 
       within(first('.user-star')) do
