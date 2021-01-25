@@ -34,7 +34,7 @@ RSpec.describe 'Tags/New', type: :feature do
       expect(page).to have_current_path(user_root_path(user.nickname))
 
       within(first('.user-star')) do
-        expect(page).to have_content('ruby')
+        expect(page).to have_link('ruby')
         expect(page).to have_content('rails')
         expect(page).to have_content('vim')
         expect(page).to have_content('this repo is awesome')

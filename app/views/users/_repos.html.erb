@@ -1,38 +1,36 @@
 <div class="grid grid-cols-2 gap-8 p-8">
   <% @stars.each do |star| %>
-    <div class="user-star">
-      <div class="flex flex-col bg-gray-100 pt-2 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
-        <%= link_to star.url do%>
-          <span class="text-xl text-blue-500"><%= star.owner %></span>
-          <span class="text-xl text-blue-500">/</span>
-          <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
-        <% end %>
+    <div class="user-star flex flex-col bg-gray-100 pt-2 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+      <%= link_to star.url do%>
+        <span class="text-xl text-blue-500"><%= star.owner %></span>
+        <span class="text-xl text-blue-500">/</span>
+        <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
+      <% end %>
 
-        <div class="flex flex-grow pt-2 pb-4 pr-4"><%= star.description %></div>
+      <div class="flex flex-grow pt-2 pb-4 pr-4"><%= star.description %></div>
 
-        <div class="pb-2">
-          <ul class="flex flex-row flex-wrap">
-            <% star.tags.each do |tag| %>
-              <div>
-                <li class="pr-4 pb-2">
-                  <%= button_to tag.name,
-                      user_root_path(current_user.nickname), 
-                      method: :get,
-                      params: { tag: tag.name }, 
-                      class: 'border-2 border-blue-200 hover:bg-blue-200 hover:text-black bg-blue-100 p-1 rounded-md'
-                  %>
-                </li>
-              </div>
-            <% end %>
-            <%= link_to new_tags_path(star.id) do%>
-              <div class="text-center text-gray-500">
-                <li class="border-2 border-gray-300 hover:bg-gray-200 w-24 p-1 rounded-md">
-                  Add tags
-                </li>
-              </div>
-            <% end %>
-          </ul>
-        </div>
+      <div class="pb-2">
+        <ul class="flex flex-row flex-wrap">
+          <% star.tags.each do |tag| %>
+            <div>
+              <li class="pr-4 pb-2">
+                <%= button_to tag.name,
+                    user_root_path(current_user.nickname), 
+                    method: :get,
+                    params: { tag: tag.name }, 
+                    class: 'border-2 border-blue-200 hover:bg-blue-200 hover:text-black bg-blue-100 p-1 rounded-md'
+                %>
+              </li>
+            </div>
+          <% end %>
+          <%= link_to new_tags_path(star.id) do%>
+            <div class="text-center text-gray-500">
+              <li class="border-2 border-gray-300 hover:bg-gray-200 w-24 p-1 rounded-md">
+                Add tags
+              </li>
+            </div>
+          <% end %>
+        </ul>
       </div>
     </div>
   <% end %>
