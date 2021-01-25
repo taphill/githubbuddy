@@ -94,5 +94,21 @@ RSpec.describe User, type: :model do
         expect(user1.repos_with_tag('ruby')).to eq([user1.repos[0], user1.repos[2]])
       end
     end
+
+    describe '#untagged_repos' do
+      xit 'returns all repos without a tag' do
+        user1 = create(:user, :with_repos, repo_count: 5)
+
+        tag1 = create(:tag, name: 'ruby')
+        tag2 = create(:tag, name: 'vim')
+
+        create(:tagging, tag_id: tag1.id, user_repo_id: user1.user_repos[0].id)
+        create(:tagging, tag_id: tag2.id, user_repo_id: user1.user_repos[1].id)
+
+        expected = [user1.repos[4], user1.repos[3], user1.repos[2]]
+
+        expect(user1.untagged_repos).to eq(expected)
+      end
+    end
   end
 end

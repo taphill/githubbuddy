@@ -6,14 +6,20 @@
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2">
         <% if current_user %>
-          <div class="pr-12">
-            <%= form_with url: user_root_path(current_user.nickname), method: :get, local: true do |form| %>
-              <%= form.text_field :query, placeholder: 'Search your repos', class: 'border-2 border-blue-200 rounded-md p-1' %>
-              <%= form.submit 'Search', class: 'border-2 border-gray-500 hover:bg-gray-300 hover:text-black text-gray-100 bg-gray-500 w-34 p-1 rounded-md' %>
-            <% end %>
-          </div>
+          <% unless current_user.repos.empty? %>
+            <div class="pr-12">
+              <%= form_with url: user_root_path(current_user.nickname), method: :get, local: true do |form| %>
+                <%= form.text_field :query, placeholder: 'Search your repos', class: 'border-2 border-blue-200 rounded-md p-1' %>
+                <%= form.submit 'Search', class: 'border-2 border-gray-500 hover:bg-gray-300 hover:text-black text-gray-100 bg-gray-500 w-34 p-1 rounded-md' %>
+              <% end %>
+            </div>
+          <% end %>
           <div>
-            <%= image_tag(current_user.image, class: 'w-12 h-12 rounded-full') %>
+            <%= link_to(
+                  image_tag(current_user.image, class: 'w-12 h-12 rounded-full'),
+                  "https://github.com/#{current_user.nickname}"
+                )
+            %>
           </div>
           <% else %>
             <%= link_to 'auth/github', method: :post do %>

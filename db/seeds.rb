@@ -33,5 +33,4 @@ tag4 = Tag.create(name: 'vim')
 Tagging.create!(tag_id: tag1.id, user_repo_id: user_repo1.id)
 Tagging.create!(tag_id: tag2.id, user_repo_id: user_repo1.id)
 Tagging.create!(tag_id: tag3.id, user_repo_id: user_repo5.id)
-
 Tagging.create!(tag_id: tag1.id, user_repo_id: user_repo6.id)

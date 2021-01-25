@@ -3,15 +3,6 @@
     <div class="container mx-auto bg-gray-100 p-4 shadow-md rounded-lg border-4 border-gray-200">
       <div class="pt-2">
         <ul class="flex flex-row flex-wrap">
-          <div>
-            <li class="container mx-auto pr-4 pb-2">
-              <%= button_to 'Show all',
-                  user_root_path(current_user.nickname),
-                  method: :get,
-                  class: 'border-2 border-red-300 hover:bg-red-100 hover:text-black bg-red-300 p-2 rounded-md'
-              %>
-            </li>
-          </div>
           <% current_user.tags.uniq.sort.each do |tag| %>
             <div>
               <li class="container mx-auto pr-4 pb-2">
@@ -19,11 +10,30 @@
                     user_root_path(current_user.nickname), 
                     method: :get,
                     params: { tag: tag }, 
-                    class: 'border-2 border-green-300 hover:bg-green-100 hover:text-black bg-green-300 p-2 rounded-md'
+                    class: 'border-2 border-blue-200 hover:bg-blue-200 hover:text-black bg-blue-100 p-2 rounded-md'
                 %>
               </li>
             </div>
           <% end %>
+          <div>
+            <li class="container mx-auto pr-4 pb-2">
+              <%= button_to 'All repos',
+                  user_root_path(current_user.nickname),
+                  method: :get,
+                  class: 'border-2 border-gray-300 hover:bg-gray-200 text-gray-500 p-2 rounded-md'
+              %>
+            </li>
+          </div>
+          <div>
+            <li class="container mx-auto pr-4 pb-2">
+              <%= button_to 'Untagged repos',
+                  user_root_path(current_user.nickname),
+                  method: :get,
+                  params: { no_tags: nil }, 
+                  class: 'border-2 border-gray-300 hover:bg-gray-200 text-gray-500 p-2 rounded-md'
+              %>
+            </li>
+          </div>
         </ul>
       </div>
     </div>

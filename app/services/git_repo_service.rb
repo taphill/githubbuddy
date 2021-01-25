@@ -8,7 +8,7 @@ class GitRepoService
     loop do
       page_number += 1
       json = stars_response(user_nickname: user_nickname, page_number: page_number)
-      break if json.empty? || page_number == 10
+      break if page_number == 10 || json.empty?
 
       stars << json
     end

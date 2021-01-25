@@ -33,4 +33,10 @@ class User < ApplicationRecord
         .where(user_repos: { user_id: id })
         .where(tags: { name: tag_name })
   end
+
+  def untagged_repos
+    Repo.left_outer_joins(user_repos: :taggings)
+        .where(user_repos: { user_id: 1 })
+        .where(taggings: { id: nil })
+  end
 end
