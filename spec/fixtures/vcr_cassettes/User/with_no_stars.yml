@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.1.0
+      - Faraday v1.3.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 22 Dec 2020 19:03:13 GMT
+      - Mon, 25 Jan 2021 01:53:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -57,17 +57,17 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '50'
+      - '53'
       X-Ratelimit-Reset:
-      - '1608664906'
+      - '1611543187'
       X-Ratelimit-Used:
-      - '10'
+      - '7'
       Accept-Ranges:
       - bytes
       X-Github-Request-Id:
-      - C5AE:3F90:E196F0:178A5DB:5FE242F1
+      - D396:1F83:132845:384B6D:600E2492
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Tue, 22 Dec 2020 19:03:13 GMT
+  recorded_at: Mon, 25 Jan 2021 01:53:22 GMT
 recorded_with: VCR 6.0.0
