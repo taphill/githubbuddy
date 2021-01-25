@@ -16,15 +16,27 @@ jobs:
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
 
-      - name: Install rubocop
+      - name: Cache gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+            
+      - name: Install dependencies
         run: |
           gem install bundler
-          bundle install rubocop
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
       - name: Run rubocop
-        run: bundle exec rubocop 
+        env:
+          RAILS_ENV: development
+        run: bundle exec rubocop
 
   test:
+    needs: test
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -87,11 +99,6 @@ jobs:
         run: |
           bin/rails db:test:prepare
           bundle exec rspec
-          
-      # - name: Lint
-      #   env:
-      #     RAILS_ENV: development
-      #   run: bundle exec rubocop
 
   # Deploy:
   #   if: github.event_name == 'push' && github.ref == 'ref/heads/main'
