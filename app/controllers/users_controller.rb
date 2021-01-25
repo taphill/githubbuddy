@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   private
 
+  # rubocop:disable Metrics/AbcSize
   def user_stars
     return Repo.search(query: params[:query], user_id: current_user.id) if params[:query]
     return current_user.repos_with_tag(params[:tag]) if params[:tag]
@@ -15,4 +16,5 @@ class UsersController < ApplicationController
 
     current_user.repos
   end
+  # rubocop:enable Metrics/AbcSize
 end
