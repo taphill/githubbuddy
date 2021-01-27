@@ -1,6 +1,21 @@
 # frozen_string_literal: true
 
 class GitRepoService
+  
+
+  def self.conn
+    Faraday.new(url: 'https://api.github.com')
+  end
+
+  def self.stars_response(user_nickname:, page_number:)
+    response = conn.get("/users/#{user_nickname}/starred") do |req|
+      req.params['page'] = page_number
+      req.params['per_page'] = 100
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   def self.user_stars(user_nickname)
     stars = []
     page_number = 0
@@ -16,14 +31,9 @@ class GitRepoService
     stars.flatten
   end
 
-  def self.conn
-    Faraday.new(url: 'https://api.github.com')
-  end
-
-  def self.stars_response(user_nickname:, page_number:)
-    response = conn.get("/users/#{user_nickname}/starred") do |req|
-      req.params['page'] = page_number
-      req.params['per_page'] = 100
+  def self.latest_release(owner:, repo:)
+    response = conn.get("/repos/#{owner}/#{repo}/releases/latest") do |req|
+      req.headers['Accept'] = 'application/vnd.github.v3+json'
     end
 
     JSON.parse(response.body, symbolize_names: true)
