@@ -1,0 +1,10 @@
+<div class="container mx-auto px-24 py-2 object-center">
+  <div class="text-center text-6xl text-bold pb-12">
+    <span>Latest Release &#128378;</span>
+  </div>
+
+  <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
+    <div class="pt-4 pb-8"><%= @release.tag_name %></div>
+    <p class="pt-4 pb-8"><%= @markdown.render(@release.body) %></p>
+  </div>
+</div>

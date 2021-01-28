@@ -1,1 +1,5 @@
-<h1>Latest Release</h1>
+<% if @release.nil? %>
+  <%= render 'release/no_release' %>
+<% else %>
+  <%= render 'release/release' %>
+<% end %>
