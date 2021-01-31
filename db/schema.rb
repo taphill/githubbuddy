@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_225551) do
     t.bigint "github_id", null: false
     t.string "nickname", null: false
     t.string "image"
+    t.string "github_token", null: false
     t.string "auth_token", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

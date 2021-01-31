@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.bigint :github_id, null: false
       t.string :nickname, null: false
       t.string :image
+      t.string :github_token, null: false
       t.string :auth_token, null: false
 
       t.timestamps
