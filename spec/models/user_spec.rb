@@ -10,6 +10,8 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_uniqueness_of(:github_id) }
     it { is_expected.to validate_presence_of(:nickname) }
     it { is_expected.to validate_uniqueness_of(:nickname) }
+    it { is_expected.to validate_presence_of(:github_token) }
+    it { is_expected.to validate_uniqueness_of(:github_token) }
     it { is_expected.to have_secure_token(:auth_token) }
   end
 

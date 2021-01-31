@@ -3,6 +3,7 @@
 class User < ApplicationRecord
   validates :github_id, presence: true, uniqueness: true
   validates :nickname, presence: true, uniqueness: true
+  validates :github_token, presence: true, uniqueness: true
 
   has_secure_token :auth_token
 
@@ -18,6 +19,7 @@ class User < ApplicationRecord
       user.github_id = auth_hash['uid'].to_i
       user.nickname = auth_hash['info']['nickname']
       user.image = auth_hash['info']['image']
+      user.github_token = auth_hash['credentials']['token']
     end
   end
 
