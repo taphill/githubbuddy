@@ -27,7 +27,7 @@ RSpec.describe GitRepoService, type: :service do
     end
 
     describe '.latest_release(owner, repo)', :vcr do
-      let(:result) { described_class.latest_release(owner: 'Homebrew', repo: 'brew') }
+      let(:result) { described_class.latest_release(owner: 'Homebrew', repo: 'brew', token: nil) }
 
       it { expect(result).to be_a(Hash) }
 
