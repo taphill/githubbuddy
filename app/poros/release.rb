@@ -4,8 +4,8 @@ class Release
   def initialize(attr)
     @url = attr[:html_url]
     @tag_name = attr[:tag_name]
-    @created_at = attr[:created_at]
-    @published_at = attr[:published_at]
+    @created_at = Date.strptime(attr[:created_at]).strftime("%B %d, %Y")
+    @published_at = Date.strptime(attr[:published_at]).strftime("%B %d, %Y")
     @body = attr[:body]
   end
 end
