@@ -1,10 +1,20 @@
-<div class="container mx-auto px-24 py-2 object-center">
-  <div class="text-center text-6xl text-bold pb-12">
-    <span>Latest Release &#128378;</span>
+<div class="container mx-auto px-24 py-2 pb-8 object-center">
+  <div class="text-center text-6xl text-blue-500 pb-10">
+    <%= link_to "#{@owner}/#{@repo}", "https://github.com/#{@owner}/#{@repo}" %>
+  </div>
+  <div class="pb-8 text-xl text-center text-blue-500">
+    <%= link_to 'View on GitHub', @release.url %>
   </div>
 
   <div class="container mx-auto bg-gray-100 pt-4 pl-4 shadow-md rounded-lg border-4 border-solid border-opacity-25">
-    <div class="pt-4 pb-8"><%= @release.tag_name %></div>
-    <p class="pt-4 pb-8"><%= @markdown.render(@release.body) %></p>
+    <div class="pt-4 text-gray-600 text-center text-4xl">
+      <span><%= @release.tag_name %></span>
+    </div>
+    <div class="pt-4 text-gray-600 text-center text-xl">
+      <span>Released on <%= @release.published_at %></span>
+    </div>
+    <div class="p-12 prose prose-lg max-w-none">
+      <%= markdown(@release.body) %>
+    </div>
   </div>
 </div>
