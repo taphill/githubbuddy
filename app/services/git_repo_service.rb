@@ -29,9 +29,10 @@ class GitRepoService
     stars.flatten
   end
 
-  def self.latest_release(owner:, repo:)
+  def self.latest_release(owner:, repo:, token:)
     response = conn.get("/repos/#{owner}/#{repo}/releases/latest") do |req|
       req.headers['Accept'] = 'application/vnd.github.v3+json'
+      req.headers['Authorization'] = "token #{token}"
     end
 
     JSON.parse(response.body, symbolize_names: true)

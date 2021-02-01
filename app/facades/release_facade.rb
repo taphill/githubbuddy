@@ -1,6 +1,6 @@
 class ReleaseFacade
-  def self.fetch_latest_release(owner:, repo:)
-    json_data = GitRepoService.latest_release(owner: owner, repo: repo)
+  def self.fetch_latest_release(owner:, repo:, token:)
+    json_data = GitRepoService.latest_release(owner: owner, repo: repo, token: token)
 
     return nil if json_data[:message] == 'Not Found'
 
