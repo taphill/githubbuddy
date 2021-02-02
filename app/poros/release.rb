@@ -12,7 +12,7 @@ class Release
   end
 
   private
-  
+
   def release_created_at(data)
     return nil unless data
 
