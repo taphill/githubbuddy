@@ -11,6 +11,8 @@ http_interactions:
       - Faraday v1.3.0
       Accept:
       - application/vnd.github.v3+json
+      Authorization:
+      - token <TEST_GITHUB_API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,21 +23,36 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Wed, 27 Jan 2021 18:45:57 GMT
+      - Tue, 02 Feb 2021 23:13:15 GMT
       Content-Type:
       - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
       Cache-Control:
-      - public, max-age=60, s-maxage=60
+      - private, max-age=60, s-maxage=60
       Vary:
-      - Accept, Accept-Encoding, Accept, X-Requested-With
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
       Etag:
-      - W/"ba942c7cc81cee778374d2edf3c6230ec27d9e61b546f2f5fdb24993da6b636c"
+      - W/"3e6f09bc64b38f3607fe1886b19bea7e8b3eea9a379718e1a6836c4f81d9f3eb"
       Last-Modified:
       - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Oauth-Scopes:
+      - user
+      X-Accepted-Oauth-Scopes:
+      - repo
       X-Github-Media-Type:
       - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4906'
+      X-Ratelimit-Reset:
+      - '1612310270'
+      X-Ratelimit-Used:
+      - '94'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
@@ -54,112 +71,22 @@ http_interactions:
       - origin-when-cross-origin, strict-origin-when-cross-origin
       Content-Security-Policy:
       - default-src 'none'
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '38'
-      X-Ratelimit-Reset:
-      - '1611773847'
-      X-Ratelimit-Used:
-      - '22'
-      Accept-Ranges:
-      - bytes
-      Transfer-Encoding:
-      - chunked
       X-Github-Request-Id:
-      - CCAC:7101:1CFA75E:2E72F22:6011B4E5
+      - 6BBF:44E5:241D175:4E1335D:6019DC8B
     body:
       encoding: ASCII-8BIT
-      string: '{"url":"https://api.github.com/repos/Homebrew/brew/releases/36958519","assets_url":"https://api.github.com/repos/Homebrew/brew/releases/36958519/assets","upload_url":"https://uploads.github.com/repos/Homebrew/brew/releases/36958519/assets{?name,label}","html_url":"https://github.com/Homebrew/brew/releases/tag/2.7.6","id":36958519,"author":{"login":"MikeMcQuaid","id":125011,"node_id":"MDQ6VXNlcjEyNTAxMQ==","avatar_url":"https://avatars.githubusercontent.com/u/125011?v=4","gravatar_id":"","url":"https://api.github.com/users/MikeMcQuaid","html_url":"https://github.com/MikeMcQuaid","followers_url":"https://api.github.com/users/MikeMcQuaid/followers","following_url":"https://api.github.com/users/MikeMcQuaid/following{/other_user}","gists_url":"https://api.github.com/users/MikeMcQuaid/gists{/gist_id}","starred_url":"https://api.github.com/users/MikeMcQuaid/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/MikeMcQuaid/subscriptions","organizations_url":"https://api.github.com/users/MikeMcQuaid/orgs","repos_url":"https://api.github.com/users/MikeMcQuaid/repos","events_url":"https://api.github.com/users/MikeMcQuaid/events{/privacy}","received_events_url":"https://api.github.com/users/MikeMcQuaid/received_events","type":"User","site_admin":true},"node_id":"MDc6UmVsZWFzZTM2OTU4NTE5","tag_name":"2.7.6","target_commitish":"master","name":"2.7.6","draft":false,"prerelease":false,"created_at":"2021-01-27T08:55:10Z","published_at":"2021-01-27T11:34:04Z","assets":[],"tarball_url":"https://api.github.com/repos/Homebrew/brew/tarball/2.7.6","zipball_url":"https://api.github.com/repos/Homebrew/brew/zipball/2.7.6","body":"-
-        [ENV.shared: deprecate ncurses_define](https://github.com/Homebrew/brew/pull/10432)
-        (@iMichka)\r\n- [build(deps): bump codecov from 0.4.0 to 0.4.1 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10436)
-        (@Homebrew)\r\n- [named_args_spec: add tests for unreadable formulae/casks](https://github.com/Homebrew/brew/pull/10422)
-        (@SeekingMeaning)\r\n- [Adjustments for message output](https://github.com/Homebrew/brew/pull/10412)
-        (@EricFromCanada)\r\n- [delete some variables after Homebrew 2.7.0 is released.](https://github.com/Homebrew/brew/pull/10430)
-        (@hyuraku)\r\n- [dev-cmd/bump: increase test coverage](https://github.com/Homebrew/brew/pull/10417)
-        (@nandahkrishna)\r\n- [build(deps): bump simplecov from 0.20.0 to 0.21.2 in
-        /Library/Homebrew](https://github.com/Homebrew/brew/pull/10427) (@Homebrew)\r\n-
-        [install: add workaround for rosetta2 path error to msg](https://github.com/Homebrew/brew/pull/10319)
-        (@dcow)\r\n- [cmd/update: suppress curl warnings in certain envs](https://github.com/Homebrew/brew/pull/10420)
-        (@vszakats)\r\n- [Generate zsh completions automatically](https://github.com/Homebrew/brew/pull/10403)
-        (@Rylan12)\r\n- [build(deps): bump codecov from 0.3.0 to 0.4.0 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10425)
-        (@Homebrew)\r\n- [build(deps): bump sorbet from 0.5.6231 to 0.5.6239 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10426)
-        (@Homebrew)\r\n- [sorbet: Update RBI files.](https://github.com/Homebrew/brew/pull/10367)
-        (@Homebrew)\r\n- [](https://github.com/Homebrew/brew/pull/10369) (@Homebrew)\r\n-
-        [version: mark methods as public](https://github.com/Homebrew/brew/pull/10407)
-        (@SeekingMeaning)\r\n- [bump-formula-pr: improvements](https://github.com/Homebrew/brew/pull/10406)
-        (@SeekingMeaning)\r\n- [named_args: raise error if formula/cask is found but
-        unreadable](https://github.com/Homebrew/brew/pull/10405) (@SeekingMeaning)\r\n-
-        [livecheck: split cask versions into sub-versions](https://github.com/Homebrew/brew/pull/10376)
-        (@SeekingMeaning)\r\n- [version: add new `Version::Parser` class](https://github.com/Homebrew/brew/pull/10378)
-        (@SeekingMeaning)\r\n- [homebrew_bootsnap: fix brew tests.](https://github.com/Homebrew/brew/pull/10416)
-        (@MikeMcQuaid)\r\n- [Add installed and outdated to cask json output](https://github.com/Homebrew/brew/pull/10278)
-        (@zkokaja)\r\n- [Refactor `brew bump`](https://github.com/Homebrew/brew/pull/10285)
-        (@nandahkrishna)\r\n- [dev-cmd/extract: Improve the usage instructions](https://github.com/Homebrew/brew/pull/10400)
-        (@issyl0)\r\n- [utils/curl: use specs when checking http content problems](https://github.com/Homebrew/brew/pull/10402)
-        (@Rylan12)\r\n- [Fix zsh completions for upgrade and reinstall](https://github.com/Homebrew/brew/pull/10411)
-        (@muneebmahmed)\r\n- [build(deps-dev): bump github-pages from 209 to 210 in
-        /docs](https://github.com/Homebrew/brew/pull/10413) (@Homebrew)\r\n- [build(deps):
-        bump rubocop-ast from 1.4.0 to 1.4.1 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10415)
-        (@Homebrew)\r\n- [build(deps): bump sorbet from 0.5.6225 to 0.5.6231 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10414)
-        (@Homebrew)\r\n- [UX fix - Properly allow quarantine in ''upgrade''](https://github.com/Homebrew/brew/pull/10398)
-        (@AntonioMeireles)\r\n- [completions/zsh: fix broken zsh tab completion for
-        `brew upgrade`](https://github.com/Homebrew/brew/pull/10410) (@SeekingMeaning)\r\n-
-        [Add brew release command](https://github.com/Homebrew/brew/pull/10370) (@Rylan12)\r\n-
-        [os/mac/version: update method signatures](https://github.com/Homebrew/brew/pull/10364)
-        (@SeekingMeaning)\r\n- [cmd/cleanup: add description about all to --prune](https://github.com/Homebrew/brew/pull/10301)
-        (@hyuraku)\r\n- [tests: make macOS tests require a passing syntax job.](https://github.com/Homebrew/brew/pull/10387)
-        (@MikeMcQuaid)\r\n- [build(deps): bump sorbet from 0.5.6223 to 0.5.6225 in
-        /Library/Homebrew](https://github.com/Homebrew/brew/pull/10394) (@Homebrew)\r\n-
-        [software_spec: change BottleSpecification#checksums to return array](https://github.com/Homebrew/brew/pull/10395)
-        (@SeekingMeaning)\r\n- [Fix HOMEBREW_BOOTSNAP setup](https://github.com/Homebrew/brew/pull/10390)
-        (@MikeMcQuaid)\r\n- [version: fix type signature](https://github.com/Homebrew/brew/pull/10381)
-        (@jonchang)\r\n- [utils/git_repository: add `::git_branch` and `::git_commit_message`](https://github.com/Homebrew/brew/pull/10380)
-        (@SeekingMeaning)\r\n- [Don''t tap user-untapped official taps](https://github.com/Homebrew/brew/pull/10366)
-        (@Rylan12)\r\n- [cleanup: raise failures and handle later.](https://github.com/Homebrew/brew/pull/10389)
-        (@MikeMcQuaid)\r\n- [Move HOMEBREW_AUTO_UPDATE_SECS default definition](https://github.com/Homebrew/brew/pull/10388)
-        (@MikeMcQuaid)\r\n- [Add HOMEBREW_BOOTSNAP to optionally use Bootsnap](https://github.com/Homebrew/brew/pull/10374)
-        (@MikeMcQuaid)\r\n- [build(deps): bump sorbet from 0.5.6216 to 0.5.6223 in
-        /Library/Homebrew](https://github.com/Homebrew/brew/pull/10383) (@Homebrew)\r\n-
-        [build(deps): bump concurrent-ruby from 1.1.7 to 1.1.8 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10382)
-        (@Homebrew)\r\n- [fix `brew shellenv` on fish](https://github.com/Homebrew/brew/pull/10349)
-        (@zgracem)\r\n- [exceptions: more handling of nil status.](https://github.com/Homebrew/brew/pull/10384)
-        (@MikeMcQuaid)\r\n- [completions/zsh: add-cask-option](https://github.com/Homebrew/brew/pull/10226)
-        (@hyuraku)\r\n- [install-bundler-gem: allow on ARM.](https://github.com/Homebrew/brew/pull/10385)
-        (@MikeMcQuaid)\r\n- [dev-cmd: disable when broken on Apple Silicon.](https://github.com/Homebrew/brew/pull/10375)
-        (@MikeMcQuaid)\r\n- [Clarification on the use of `:optional` and `:recommended`](https://github.com/Homebrew/brew/pull/10361)
-        (@tlk)\r\n- [git_repository_spec: group together shared examples](https://github.com/Homebrew/brew/pull/10365)
-        (@SeekingMeaning)\r\n- [Suggest alternative method for enabling ZSH completions](https://github.com/Homebrew/brew/pull/10373)
-        (@davidbailey00)\r\n- [livecheck: compare actual version for casks](https://github.com/Homebrew/brew/pull/10348)
-        (@SeekingMeaning)\r\n- [completions: complete files where appropriate in bash](https://github.com/Homebrew/brew/pull/10360)
-        (@Rylan12)\r\n- [rubocop: disallow and/or in favor of &&/||](https://github.com/Homebrew/brew/pull/10357)
-        (@dtrodrigues)\r\n- [Replace :x11 symbol as it is no longer available](https://github.com/Homebrew/brew/pull/10362)
-        (@tlk)\r\n- [os/mac/version: use named captures in regex](https://github.com/Homebrew/brew/pull/10358)
-        (@SeekingMeaning)\r\n- [version: enable Sorbet type checking](https://github.com/Homebrew/brew/pull/10331)
-        (@SeekingMeaning)\r\n- [docs: update external command documentation](https://github.com/Homebrew/brew/pull/10333)
-        (@Rylan12)\r\n- [bottle: tag specific cellars](https://github.com/Homebrew/brew/pull/10186)
-        (@iMichka)\r\n- [pypi: allow packages in global exclude list if explicitly
-        requested](https://github.com/Homebrew/brew/pull/10356) (@dtrodrigues)\r\n-
-        [rubocop: require braces for Sorbet `sig`](https://github.com/Homebrew/brew/pull/10351)
-        (@SeekingMeaning)\r\n- [Cask: audit: Do not require appcast on GitHub releases](https://github.com/Homebrew/brew/pull/10344)
-        (@vitorgalvao)\r\n- [Generate command usage text](https://github.com/Homebrew/brew/pull/10342)
-        (@Rylan12)\r\n- [completions: remove link](https://github.com/Homebrew/brew/pull/10359)
-        (@dtrodrigues)\r\n- [dev-cmd/man: Completely remove `--link`](https://github.com/Homebrew/brew/pull/10350)
-        (@issyl0)\r\n- [git_repository: raise error instead of returning nil if `safe`](https://github.com/Homebrew/brew/pull/10346)
-        (@SeekingMeaning)\r\n- [rubocops: move some methods from FormulaCop to HelperFunctions](https://github.com/Homebrew/brew/pull/10341)
-        (@SeekingMeaning)\r\n- [sorbet: delete local fixes that have been merged upstream](https://github.com/Homebrew/brew/pull/10339)
-        (@SeekingMeaning)\r\n- [Generate bash completions automatically](https://github.com/Homebrew/brew/pull/10229)
-        (@Rylan12)\r\n- [build(deps): bump tapioca from 0.4.12 to 0.4.13 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10352)
-        (@Homebrew)\r\n- [build(deps): bump sorbet from 0.5.6210 to 0.5.6216 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10353)
-        (@Homebrew)\r\n- [cmd/prof: raise error when cmd is bash file](https://github.com/Homebrew/brew/pull/10280)
-        (@hyuraku)\r\n- [keg: refactor to use keyword arguments](https://github.com/Homebrew/brew/pull/10325)
-        (@hyuraku)\r\n- [utils/pypi: allow pipgrip to resolve conflicts](https://github.com/Homebrew/brew/pull/10330)
-        (@bayandin)\r\n- [rubocops/*: improve test descriptions](https://github.com/Homebrew/brew/pull/10334)
-        (@SeekingMeaning)\r\n- [rubocops/text: improve test descriptions](https://github.com/Homebrew/brew/pull/10332)
-        (@SeekingMeaning)\r\n- [Livecheck#url: Don''t convert URL symbol to string](https://github.com/Homebrew/brew/pull/10309)
-        (@samford)\r\n- [rubocops: point to offending OS-specific block in resource
-        blocks](https://github.com/Homebrew/brew/pull/10322) (@SeekingMeaning)\r\n-
-        [cmd,dev-cmd: indicate multiple named args in usage banner](https://github.com/Homebrew/brew/pull/10337)
-        (@dawidd6)\r\n"}'
-  recorded_at: Wed, 27 Jan 2021 18:45:57 GMT
+      string: '{"url":"https://api.github.com/repos/Homebrew/brew/releases/37036877","assets_url":"https://api.github.com/repos/Homebrew/brew/releases/37036877/assets","upload_url":"https://uploads.github.com/repos/Homebrew/brew/releases/37036877/assets{?name,label}","html_url":"https://github.com/Homebrew/brew/releases/tag/2.7.7","id":37036877,"author":{"login":"MikeMcQuaid","id":125011,"node_id":"MDQ6VXNlcjEyNTAxMQ==","avatar_url":"https://avatars.githubusercontent.com/u/125011?v=4","gravatar_id":"","url":"https://api.github.com/users/MikeMcQuaid","html_url":"https://github.com/MikeMcQuaid","followers_url":"https://api.github.com/users/MikeMcQuaid/followers","following_url":"https://api.github.com/users/MikeMcQuaid/following{/other_user}","gists_url":"https://api.github.com/users/MikeMcQuaid/gists{/gist_id}","starred_url":"https://api.github.com/users/MikeMcQuaid/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/MikeMcQuaid/subscriptions","organizations_url":"https://api.github.com/users/MikeMcQuaid/orgs","repos_url":"https://api.github.com/users/MikeMcQuaid/repos","events_url":"https://api.github.com/users/MikeMcQuaid/events{/privacy}","received_events_url":"https://api.github.com/users/MikeMcQuaid/received_events","type":"User","site_admin":true},"node_id":"MDc6UmVsZWFzZTM3MDM2ODc3","tag_name":"2.7.7","target_commitish":"master","name":"2.7.7","draft":false,"prerelease":false,"created_at":"2021-01-28T14:08:36Z","published_at":"2021-01-28T15:46:22Z","assets":[],"tarball_url":"https://api.github.com/repos/Homebrew/brew/tarball/2.7.7","zipball_url":"https://api.github.com/repos/Homebrew/brew/zipball/2.7.7","body":"-
+        [build(deps): bump sorbet from 0.5.6239 to 0.5.6251 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10446)
+        (@Homebrew)\r\n- [build(deps): bump codecov from 0.4.1 to 0.4.2 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10443)
+        (@Homebrew)\r\n- [software_spec: reverse tag/digest for new bottles.](https://github.com/Homebrew/brew/pull/10447)
+        (@Homebrew)\r\n- [tests: cleanup user configuration.](https://github.com/Homebrew/brew/pull/10445)
+        (@MikeMcQuaid)\r\n- [zsh: add guards to speed up completions](https://github.com/Homebrew/brew/pull/10434)
+        (@jonchang)\r\n- [zsh: don''t complete conflicting options](https://github.com/Homebrew/brew/pull/10435)
+        (@jonchang)\r\n- [Update fish completions to satisfy brew man](https://github.com/Homebrew/brew/pull/10442)
+        (@Rylan12)\r\n- [Generate fish completions automatically](https://github.com/Homebrew/brew/pull/10431)
+        (@Rylan12)\r\n- [spec_helper: fix and improve retry logic.](https://github.com/Homebrew/brew/pull/10439)
+        (@MikeMcQuaid)\r\n- [cask/audit: disallow new cask to have token in tap_migrations.json](https://github.com/Homebrew/brew/pull/10428)
+        (@SeekingMeaning)\r\n- [Autoformat YAML files](https://github.com/Homebrew/brew/pull/10429)
+        (@MikeMcQuaid)\r\n"}'
+  recorded_at: Tue, 02 Feb 2021 23:13:15 GMT
 recorded_with: VCR 6.0.0

@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/vnd.github.v3+json
       Authorization:
-      - token cf261cb4b55365a5be381bcfed6b18b6b7c17bb0
+      - token <TEST_GITHUB_API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 02 Feb 2021 22:35:14 GMT
+      - Tue, 02 Feb 2021 23:13:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -36,7 +36,7 @@ http_interactions:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       - Accept-Encoding, Accept, X-Requested-With
       Etag:
-      - W/"984fb5ffd7f8b148d5440ad206f72a2704d83a4dd01f6c5a3ac4180cf8743512"
+      - W/"3e6f09bc64b38f3607fe1886b19bea7e8b3eea9a379718e1a6836c4f81d9f3eb"
       Last-Modified:
       - Thu, 01 Jan 1970 00:00:00 GMT
       X-Oauth-Scopes:
@@ -48,11 +48,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4997'
+      - '4894'
       X-Ratelimit-Reset:
-      - '1612306610'
+      - '1612310270'
       X-Ratelimit-Used:
-      - '3'
+      - '106'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
@@ -72,7 +72,7 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - 1C19:7213:FC9791:2A7B01C:6019D3A2
+      - BAC8:7215:45DC475:7033237:6019DC90
     body:
       encoding: ASCII-8BIT
       string: '{"url":"https://api.github.com/repos/Homebrew/brew/releases/37036877","assets_url":"https://api.github.com/repos/Homebrew/brew/releases/37036877/assets","upload_url":"https://uploads.github.com/repos/Homebrew/brew/releases/37036877/assets{?name,label}","html_url":"https://github.com/Homebrew/brew/releases/tag/2.7.7","id":37036877,"author":{"login":"MikeMcQuaid","id":125011,"node_id":"MDQ6VXNlcjEyNTAxMQ==","avatar_url":"https://avatars.githubusercontent.com/u/125011?v=4","gravatar_id":"","url":"https://api.github.com/users/MikeMcQuaid","html_url":"https://github.com/MikeMcQuaid","followers_url":"https://api.github.com/users/MikeMcQuaid/followers","following_url":"https://api.github.com/users/MikeMcQuaid/following{/other_user}","gists_url":"https://api.github.com/users/MikeMcQuaid/gists{/gist_id}","starred_url":"https://api.github.com/users/MikeMcQuaid/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/MikeMcQuaid/subscriptions","organizations_url":"https://api.github.com/users/MikeMcQuaid/orgs","repos_url":"https://api.github.com/users/MikeMcQuaid/repos","events_url":"https://api.github.com/users/MikeMcQuaid/events{/privacy}","received_events_url":"https://api.github.com/users/MikeMcQuaid/received_events","type":"User","site_admin":true},"node_id":"MDc6UmVsZWFzZTM3MDM2ODc3","tag_name":"2.7.7","target_commitish":"master","name":"2.7.7","draft":false,"prerelease":false,"created_at":"2021-01-28T14:08:36Z","published_at":"2021-01-28T15:46:22Z","assets":[],"tarball_url":"https://api.github.com/repos/Homebrew/brew/tarball/2.7.7","zipball_url":"https://api.github.com/repos/Homebrew/brew/zipball/2.7.7","body":"-
@@ -88,5 +88,5 @@ http_interactions:
         (@MikeMcQuaid)\r\n- [cask/audit: disallow new cask to have token in tap_migrations.json](https://github.com/Homebrew/brew/pull/10428)
         (@SeekingMeaning)\r\n- [Autoformat YAML files](https://github.com/Homebrew/brew/pull/10429)
         (@MikeMcQuaid)\r\n"}'
-  recorded_at: Tue, 02 Feb 2021 22:35:14 GMT
+  recorded_at: Tue, 02 Feb 2021 23:13:20 GMT
 recorded_with: VCR 6.0.0
