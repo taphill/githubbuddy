@@ -4,7 +4,9 @@ require 'rails_helper'
 
 RSpec.describe SyncFacade, type: :facade do
   describe '.fetch_user_stars()' do
-    let(:user) { create(:user, nickname: 'taphill', github_token: Rails.application.credentials.test[:github_api_token]) }
+    let(:user) do
+      create(:user, nickname: 'taphill', github_token: Rails.application.credentials.test[:github_api_token])
+    end
 
     before do
       described_class.fetch_user_stars(user)
