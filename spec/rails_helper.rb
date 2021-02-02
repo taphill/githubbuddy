@@ -93,5 +93,6 @@ VCR.configure do |config|
   config.filter_sensitive_data('<PROD_GITHUB_CLIENT_SECRET>') { Rails.application.credentials.production[:client_secret] }
   config.filter_sensitive_data('<DEV_GITHUB_CLIENT_ID>') { Rails.application.credentials.development[:client_id] }
   config.filter_sensitive_data('<DEV_GITHUB_CLIENT_SECRET>') { Rails.application.credentials.development[:client_secret] }
+  config.filter_sensitive_data('<TEST_GITHUB_API_TOKEN>') { Rails.application.credentials.test[:github_api_token] }
   config.default_cassette_options = { re_record_interval: 30.days }
 end
