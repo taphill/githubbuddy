@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReleaseFacade
   def self.fetch_latest_release(owner:, repo:, token:)
     json_data = GitRepoService.latest_release(owner: owner, repo: repo, token: token)

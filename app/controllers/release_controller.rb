@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'redcarpet'
 
 class ReleaseController < ApplicationController
@@ -6,7 +8,7 @@ class ReleaseController < ApplicationController
       owner: params[:owner],
       repo: params[:repo],
       token: current_user.github_token
-    )  
+    )
 
     @owner = params[:owner]
     @repo = params[:repo]

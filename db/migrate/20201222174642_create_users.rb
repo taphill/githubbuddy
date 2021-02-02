@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
 
     add_index :users, :github_id, unique: true
     add_index :users, :nickname, unique: true
+    add_index :users, :github_token, unique: true
     add_index :users, :auth_token, unique: true
   end
 end

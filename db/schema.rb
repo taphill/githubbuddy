@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_225551) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true
     t.index ["github_id"], name: "index_users_on_github_id", unique: true
+    t.index ["github_token"], name: "index_users_on_github_token", unique: true
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
 
