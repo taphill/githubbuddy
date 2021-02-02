@@ -55,11 +55,13 @@ ActiveRecord::Schema.define(version: 2020_12_22_225551) do
     t.bigint "github_id", null: false
     t.string "nickname", null: false
     t.string "image"
+    t.string "github_token", null: false
     t.string "auth_token", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true
     t.index ["github_id"], name: "index_users_on_github_id", unique: true
+    t.index ["github_token"], name: "index_users_on_github_token", unique: true
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
 

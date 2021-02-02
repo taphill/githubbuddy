@@ -9,6 +9,8 @@ http_interactions:
     headers:
       User-Agent:
       - Faraday v1.3.0
+      Authorization:
+      - token <TEST_GITHUB_API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 25 Jan 2021 22:17:39 GMT
+      - Tue, 02 Feb 2021 23:13:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,13 +31,26 @@ http_interactions:
       Status:
       - 200 OK
       Cache-Control:
-      - public, max-age=60, s-maxage=60
+      - private, max-age=60, s-maxage=60
       Vary:
-      - Accept, Accept-Encoding, Accept, X-Requested-With
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
       Etag:
-      - '"992aaf92b487506974e4305db4a64326866f3ed48b2ba424cef8fbe4e28f72b0"'
+      - '"4f995674438d1dbccf5a5b2c14e65867307f8326c85f91e7d1138e1e888d725c"'
+      X-Oauth-Scopes:
+      - user
+      X-Accepted-Oauth-Scopes:
+      - ''
       X-Github-Media-Type:
       - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4891'
+      X-Ratelimit-Reset:
+      - '1612310270'
+      X-Ratelimit-Used:
+      - '109'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
@@ -54,20 +69,10 @@ http_interactions:
       - origin-when-cross-origin, strict-origin-when-cross-origin
       Content-Security-Policy:
       - default-src 'none'
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '52'
-      X-Ratelimit-Reset:
-      - '1611614181'
-      X-Ratelimit-Used:
-      - '8'
-      Accept-Ranges:
-      - bytes
       X-Github-Request-Id:
-      - 2394:135A:14963:383B4:600F4383
+      - 29F9:529A:233F2B6:519F4DE:6019DC92
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Mon, 25 Jan 2021 22:17:39 GMT
+  recorded_at: Tue, 02 Feb 2021 23:13:22 GMT
 recorded_with: VCR 6.0.0

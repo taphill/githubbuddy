@@ -12,7 +12,7 @@ module OmniauthHelpers
         'image' => 'https://static.thenounproject.com/png/340719-200.png'
       },
       'credentials' => {
-        'token' => 'e596f957145e7b9c14',
+        'token' => Rails.application.credentials.test[:github_api_token],
         'expires' => 'false'
       }
     }
@@ -29,7 +29,7 @@ module OmniauthHelpers
         'image' => 'https://static.thenounproject.com/png/340719-200.png'
       },
       'credentials' => {
-        'token' => 'e596f957145t89n7f8',
+        'token' => Rails.application.credentials.test[:github_api_token],
         'expires' => 'false'
       }
     }
@@ -46,7 +46,7 @@ module OmniauthHelpers
         'image' => 'https://avatars2.githubusercontent.com/u/62676321?v=4'
       },
       'credentials' => {
-        'token' => 'e596f957145e7b9c14',
+        'token' => Rails.application.credentials.test[:github_api_token],
         'expires' => 'false'
       }
     }

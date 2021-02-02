@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :welcome, only: [:index]
   resources :sync, only: [:index]
+  resources :release, only: [:index]
 
   get '/:nickname', to: 'users#index', as: 'user_root'
 

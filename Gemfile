@@ -34,6 +34,8 @@ gem 'faraday'
 gem "nokogiri", ">= 1.11.0.rc4"
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
+gem 'pygments.rb'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

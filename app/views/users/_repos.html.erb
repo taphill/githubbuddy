@@ -7,6 +7,14 @@
         <span class="text-xl text-blue-500 font-bold"><%= star.name %></span>
       <% end %>
 
+      <div class="pt-2">
+        <%= 
+          link_to 'Latest release',
+          release_index_path(owner: star.owner, repo: star.name),
+          class: 'text-blue-500'
+        %>
+      </div>
+
       <div class="flex flex-grow pt-2 pb-4 pr-4"><%= star.description %></div>
 
       <div class="pb-2">
@@ -14,11 +22,12 @@
           <% star.tags.each do |tag| %>
             <div>
               <li class="pr-4 pb-2">
-                <%= button_to tag.name,
-                    user_root_path(current_user.nickname), 
-                    method: :get,
-                    params: { tag: tag.name }, 
-                    class: 'border-2 border-blue-200 hover:bg-blue-200 hover:text-black bg-blue-100 p-1 rounded-md'
+                <%= 
+                  button_to tag.name,
+                  user_root_path(current_user.nickname), 
+                  method: :get,
+                  params: { tag: tag.name }, 
+                  class: 'border-2 border-blue-200 hover:bg-blue-200 hover:text-black bg-blue-100 p-1 rounded-md'
                 %>
               </li>
             </div>

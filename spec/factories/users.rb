@@ -5,6 +5,7 @@ FactoryBot.define do
     sequence(:github_id) { |n| "100#{n}" }
     nickname { Faker::Internet.username }
     image { 'https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482930.jpg' }
+    github_token { "OfY#{Faker::Number.number(digits: 10)}nDDn" }
     auth_token { Faker::Number.number(digits: 10) }
 
     trait :with_repos do

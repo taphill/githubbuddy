@@ -7,6 +7,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
+    "@tailwindcss/typography": "^0.4.0",
     "tailwindcss": "^2.0.1-compat",
     "turbolinks": "^5.2.0",
     "webpack": "^4.0.0"

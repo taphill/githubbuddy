@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/Homebrew/brew/releases/latest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept:
+      - application/vnd.github.v3+json
+      Authorization:
+      - token <TEST_GITHUB_API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 02 Feb 2021 23:13:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"3e6f09bc64b38f3607fe1886b19bea7e8b3eea9a379718e1a6836c4f81d9f3eb"
+      Last-Modified:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Oauth-Scopes:
+      - user
+      X-Accepted-Oauth-Scopes:
+      - repo
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4895'
+      X-Ratelimit-Reset:
+      - '1612310270'
+      X-Ratelimit-Used:
+      - '105'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - 13FB:7B98:6127D9:109C621:6019DC90
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https://api.github.com/repos/Homebrew/brew/releases/37036877","assets_url":"https://api.github.com/repos/Homebrew/brew/releases/37036877/assets","upload_url":"https://uploads.github.com/repos/Homebrew/brew/releases/37036877/assets{?name,label}","html_url":"https://github.com/Homebrew/brew/releases/tag/2.7.7","id":37036877,"author":{"login":"MikeMcQuaid","id":125011,"node_id":"MDQ6VXNlcjEyNTAxMQ==","avatar_url":"https://avatars.githubusercontent.com/u/125011?v=4","gravatar_id":"","url":"https://api.github.com/users/MikeMcQuaid","html_url":"https://github.com/MikeMcQuaid","followers_url":"https://api.github.com/users/MikeMcQuaid/followers","following_url":"https://api.github.com/users/MikeMcQuaid/following{/other_user}","gists_url":"https://api.github.com/users/MikeMcQuaid/gists{/gist_id}","starred_url":"https://api.github.com/users/MikeMcQuaid/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/MikeMcQuaid/subscriptions","organizations_url":"https://api.github.com/users/MikeMcQuaid/orgs","repos_url":"https://api.github.com/users/MikeMcQuaid/repos","events_url":"https://api.github.com/users/MikeMcQuaid/events{/privacy}","received_events_url":"https://api.github.com/users/MikeMcQuaid/received_events","type":"User","site_admin":true},"node_id":"MDc6UmVsZWFzZTM3MDM2ODc3","tag_name":"2.7.7","target_commitish":"master","name":"2.7.7","draft":false,"prerelease":false,"created_at":"2021-01-28T14:08:36Z","published_at":"2021-01-28T15:46:22Z","assets":[],"tarball_url":"https://api.github.com/repos/Homebrew/brew/tarball/2.7.7","zipball_url":"https://api.github.com/repos/Homebrew/brew/zipball/2.7.7","body":"-
+        [build(deps): bump sorbet from 0.5.6239 to 0.5.6251 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10446)
+        (@Homebrew)\r\n- [build(deps): bump codecov from 0.4.1 to 0.4.2 in /Library/Homebrew](https://github.com/Homebrew/brew/pull/10443)
+        (@Homebrew)\r\n- [software_spec: reverse tag/digest for new bottles.](https://github.com/Homebrew/brew/pull/10447)
+        (@Homebrew)\r\n- [tests: cleanup user configuration.](https://github.com/Homebrew/brew/pull/10445)
+        (@MikeMcQuaid)\r\n- [zsh: add guards to speed up completions](https://github.com/Homebrew/brew/pull/10434)
+        (@jonchang)\r\n- [zsh: don''t complete conflicting options](https://github.com/Homebrew/brew/pull/10435)
+        (@jonchang)\r\n- [Update fish completions to satisfy brew man](https://github.com/Homebrew/brew/pull/10442)
+        (@Rylan12)\r\n- [Generate fish completions automatically](https://github.com/Homebrew/brew/pull/10431)
+        (@Rylan12)\r\n- [spec_helper: fix and improve retry logic.](https://github.com/Homebrew/brew/pull/10439)
+        (@MikeMcQuaid)\r\n- [cask/audit: disallow new cask to have token in tap_migrations.json](https://github.com/Homebrew/brew/pull/10428)
+        (@SeekingMeaning)\r\n- [Autoformat YAML files](https://github.com/Homebrew/brew/pull/10429)
+        (@MikeMcQuaid)\r\n"}'
+  recorded_at: Tue, 02 Feb 2021 23:13:20 GMT
+recorded_with: VCR 6.0.0
