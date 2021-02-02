@@ -18,6 +18,7 @@ if (process.env.RAILS_ENV === "production") {
     require('@fullhuman/postcss-purgecss')({
       content: ['./app/**/*.html.erb', '.app/helper/*.rb'],
       safelist: {
+        standard: [/prose$/],
         greedy: [/input/],
       },
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
