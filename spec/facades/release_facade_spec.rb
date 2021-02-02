@@ -6,7 +6,13 @@ RSpec.describe ReleaseFacade, type: :facade do
   describe 'class methods' do
     describe '.fetch_latest_release(owner, repo)' do
       context 'when there is a latest release', :vcr do
-        let(:release) { ReleaseFacade.fetch_latest_release(owner: 'Homebrew', repo: 'brew', token: nil) }
+        let(:release) do 
+          ReleaseFacade.fetch_latest_release(
+            owner: 'Homebrew',
+            repo: 'brew',
+            token: Rails.application.credentials.test[:github_api_token]
+          )
+        end
 
         it { expect(release).to be_a(Release) }
 
@@ -18,7 +24,13 @@ RSpec.describe ReleaseFacade, type: :facade do
       end
 
       context 'when no release exists', :vcr do
-        let(:release) { ReleaseFacade.fetch_latest_release(owner: 'taphill', repo: 'graph_ql', token: nil) }
+        let(:release) do 
+          ReleaseFacade.fetch_latest_release(
+            owner: 'taphill',
+            repo: 'graph_ql',
+            token: Rails.application.credentials.test[:github_api_token]
+          )
+        end
 
         it { expect(release).to be_nil }
       end

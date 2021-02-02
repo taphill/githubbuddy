@@ -5,7 +5,9 @@ require 'rails_helper'
 RSpec.describe GitRepoService, type: :service do
   describe 'class methods' do
     describe '.user_stars(user_nickname) when passed a valid nickname', :vcr do
-      let(:user_stars_data) { described_class.user_stars('taphill') }
+      let(:user) { create(:user, nickname: 'taphill', github_token: Rails.application.credentials.test[:github_api_token]) }
+
+      let(:user_stars_data) { described_class.user_stars(user) }
       let(:first_result) { user_stars_data.first }
 
       it { expect(user_stars_data).to be_a(Array) }
@@ -26,8 +28,14 @@ RSpec.describe GitRepoService, type: :service do
       it { expect(first_result[:description]).to be_a(String) }
     end
 
-    describe '.latest_release(owner, repo)', :vcr do
-      let(:result) { described_class.latest_release(owner: 'Homebrew', repo: 'brew', token: nil) }
+    describe '.latest_release(owner, repo, token)', :vcr do
+      let(:result) do 
+          described_class.latest_release(
+            owner: 'Homebrew',
+            repo: 'brew',
+            token: Rails.application.credentials.test[:github_api_token]
+          )
+      end
 
       it { expect(result).to be_a(Hash) }
 
