@@ -17,9 +17,8 @@ if (process.env.RAILS_ENV === "production") {
   environment.plugins.push(
     require('@fullhuman/postcss-purgecss')({
       content: ['./app/**/*.html.erb', '.app/helper/*.rb'],
-      whitelistPatternsChildren: [/prose$/],
       safelist: {
-        greedy: [/input/],
+        greedy: [/input|prose$/],
       },
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
     })
