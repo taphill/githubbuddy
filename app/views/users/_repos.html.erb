@@ -20,19 +20,25 @@
       <div class="pb-2">
         <ul class="flex flex-row flex-wrap">
           <% star.tags.each do |tag| %>
-            <div>
-              <li class="pr-4 pb-2">
-                <%= 
-                  button_to tag.name,
-                  user_root_path(current_user.nickname), 
-                  method: :get,
-                  params: { tag: tag.name }, 
-                  class: 'border-2 border-blue-200 hover:bg-blue-200 hover:text-black bg-blue-100 p-1 rounded-md'
-                %>
-              </li>
-            </div>
+            <li class="pr-4 pb-2">
+              <div class="flex flex-row border-2 border-blue-200 bg-blue-100 hover:bg-blue-200 p-1 rounded-md">
+                  <%= 
+                    button_to tag.name,
+                    user_root_path(current_user.nickname), 
+                    method: :get,
+                    params: { tag: tag.name }, 
+                    class: 'bg-transparent pr-3'
+                  %>
+                  <%=
+                    link_to 'x',
+                    tag_path(id: tag.id, repo_id: star.id),
+                    method: :delete,
+                    class: 'bg-transparent text-red-400 hover:text-red-600'
+                  %>
+              </div>
+            </li>
           <% end %>
-          <%= link_to new_tags_path(star.id) do%>
+          <%= link_to new_tags_path(star.id) do %>
             <div class="text-center text-gray-500">
               <li class="border-2 border-gray-300 hover:bg-gray-200 w-24 p-1 rounded-md">
                 Add tags
