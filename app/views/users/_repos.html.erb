@@ -20,7 +20,7 @@
       <div class="pb-2">
         <ul class="flex flex-row flex-wrap">
           <% star.tags.each do |tag| %>
-            <li class="pr-4 pb-2">
+            <li class="star-tag pr-4 pb-2">
               <div class="flex flex-row border-2 border-blue-200 bg-blue-100 hover:bg-blue-200 p-1 rounded-md">
                   <%= 
                     button_to tag.name,
@@ -33,6 +33,7 @@
                     link_to 'x',
                     tag_path(id: tag.id, repo_id: star.id),
                     method: :delete,
+                    remote: true,
                     class: 'bg-transparent text-red-400 hover:text-red-600'
                   %>
               </div>
