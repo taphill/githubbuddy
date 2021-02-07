@@ -19,11 +19,6 @@ class TagsController < ApplicationController
     redirect_to user_root_path(current_user.nickname)
   end
 
-  def edit
-    @repo = Repo.find(params[:repo_id])
-    @user_repo = UserRepo.find_by(user_id: current_user.id, repo_id: params[:repo_id])
-  end
-
   # rubocop:disable Metrics/AbcSize
   def destroy
     tag = Tag.find(params[:id])
