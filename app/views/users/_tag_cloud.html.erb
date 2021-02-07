@@ -32,7 +32,7 @@
                 button_to 'Untagged repos',
                 user_root_path(current_user.nickname),
                 method: :get,
-                params: { no_tags: nil }, 
+                params: { no_tags: true }, 
                 class: 'border-2 border-gray-300 hover:bg-gray-200 text-gray-500 p-2 rounded-md'
               %>
             </li>
