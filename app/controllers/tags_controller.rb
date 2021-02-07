@@ -24,14 +24,20 @@ class TagsController < ApplicationController
     @user_repo = UserRepo.find_by(user_id: current_user.id, repo_id: params[:repo_id])
   end
 
+  # rubocop:disable Metrics/AbcSize
   def destroy
     tag = Tag.find(params[:id])
     user_repo = UserRepo.find_by(user_id: current_user.id, repo_id: params[:repo_id])
     tagging = Tagging.find_by(tag_id: tag.id, user_repo_id: user_repo.id)
 
     tagging.destroy
-    redirect_to user_root_path(current_user.nickname)
+
+    respond_to do |format|
+      format.html { redirect_to user_root_path(current_user.nickname) }
+      format.js { render template: 'users/index.js.erb', layout: false }
+    end
   end
+  # rubocop:enable Metrics/AbcSize
 
   private
 
