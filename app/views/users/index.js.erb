@@ -1,0 +1,4 @@
+$('.star-tag').on('ajax:success', function() {
+  $(this).closest('li').fadeOut();
+  location.reload(true);
+})
