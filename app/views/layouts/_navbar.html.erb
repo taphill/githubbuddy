@@ -2,12 +2,16 @@
   <div class="max-w-7xl mx-auto">
     <div class="relative flex items-center justify-between h-16">
       <div class="absolute inset-y-0 left-0 flex items-center">
-        <%=
-          link_to(
-            image_tag('github_buddy.png'),
-            user_root_path(current_user.nickname)
-          )
-        %>
+        <% if current_user %>
+          <%=
+            link_to(
+              image_tag('github_buddy.png'),
+              user_root_path(current_user.nickname)
+            )
+          %>
+        <% else %>
+          <%= image_tag('github_buddy.png') %>
+        <% end %>
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2">
         <% if current_user %>
