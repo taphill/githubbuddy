@@ -32,7 +32,7 @@ A better way to manage your favorite repositories.
 
 ## Overview
 
-GitHub Buddy in an app created with Ruby on Rails and is currently hosted on Heroku. The goal of this project is to provide users with an easier way organize their favorite repos and stay up to date with the latest releases. On a personal note, this project will serve as a deep exploration of rails and webpack for myself while building something I believe people may find useful! The eventual goal is allow folks to contribute to this project and suggest features that will enhance the overall user experience.
+GitHub Buddy is an app created with Ruby on Rails and is currently hosted on Heroku. The goal of this project is to provide users with an easier way organize their favorite repos and stay up to date with the latest releases. On a personal note, this project will serve as a deep exploration of rails and webpack for myself while building something I believe people may find useful! The eventual goal is allow folks to contribute to this project and suggest features that will enhance the overall user experience.
 
 ### Design
 <img src="https://i.ibb.co/k4RfJg5/Git-Hub-Buddy.png" alt="github-buddy-inital-org-chart">
