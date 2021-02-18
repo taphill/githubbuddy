@@ -19,7 +19,6 @@ A better way to manage your favorite repositories.
 * [Project Blog](#project-blog)
 
 ## Getting Started
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oHL7Ymv1hXo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Authenticate with GitHub
 <img src="https://i.ibb.co/HpxcpVc/ghb-signin.png" alt="ghb-signin">
