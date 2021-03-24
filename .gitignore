@@ -38,3 +38,5 @@ yarn-debug.log*
 .DS_Store
 
 coverage
+
+/spec/fixtures/vcr_cassettes
