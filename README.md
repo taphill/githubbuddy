@@ -34,10 +34,8 @@ A better way to manage your favorite repositories.
 
 GitHub Buddy is an app created with Ruby on Rails and is currently hosted on Heroku. The goal of this project is to provide users with an easier way organize their favorite repos and stay up to date with the latest releases. On a personal note, this project will serve as a deep exploration of rails and webpack for myself while building something I believe people may find useful! The eventual goal is allow folks to contribute to this project and suggest features that will enhance the overall user experience.
 
-### Design
-<img src="https://i.ibb.co/k4RfJg5/Git-Hub-Buddy.png" alt="github-buddy-inital-org-chart">
-
-This high level model overview is the initial design for GitHub Buddy and highlights the core functionality of the app. A user will have many repos in their starred list which they will be able to tag and and organize to their liking. Each user will also have a profile and a feed that can link them to the latest releases of the repos they care about most.
+### Schema
+<img src="https://i.ibb.co/2hHBMQK/Screen-Shot-2021-03-24-at-4-03-28-PM.png">
 
 ## Contribution
 
