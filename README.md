@@ -2,7 +2,7 @@
 
 [![Status](https://img.shields.io/badge/status-dev-green)]()
 [![Ruby Version](https://img.shields.io/badge/ruby-v3.0.0-red)](https://www.ruby-lang.org/en/downloads/releases/)
-[![Rails Version](https://img.shields.io/badge/rails-v6.1.0.0-red)](https://rubyonrails.org/)
+[![Rails Version](https://img.shields.io/badge/rails-v6.1.3-red)](https://rubyonrails.org/)
 
 A better way to manage your favorite repositories.
 
@@ -40,7 +40,7 @@ GitHub Buddy is an app created with Ruby on Rails and is currently hosted on Her
 
 Before getting started please take a moment to review our [code of conduct](https://github.com/taphill/githubbuddy/blob/main/CODE_OF_CONDUCT.md).
 
-This application currently uses Rails 6.1.0.0 and Ruby 3.0.0. To contribute please fork this repo and then clone it to your local machine.
+This application currently uses Rails 6.1.3 and Ruby 3.0.0. To contribute please fork this repo and then clone it to your local machine.
 
 To get your dev environment setup please make sure you have all of the following:
 
