@@ -16,7 +16,6 @@ A better way to manage your favorite repositories.
   * [Yarn and Node.js](#yarn-and-nodejs)
   * [Ruby](#ruby)
   * [Bundler](#Bundler)
-* [Project Blog](#project-blog)
 
 ## Getting Started
 
@@ -96,9 +95,3 @@ $ bundle install
 ```
 
 If everything went well you should be able to run this command `$ rails server`, navigate to `http://localhost:3000`, and see the application running locally!
-
-## Project Blog
-
-If you’re curious to follow along with how this project is progressing I will be posting updates [here](PROJECTBLOG.md). These posts will mostly address roadblocks I’ve run into, how I managed to solve them, what I’ve learned, or an other tidbit of information I think someone my find useful.
-
-[Project Blog](PROJECTBLOG.md)
