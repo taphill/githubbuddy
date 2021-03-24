@@ -5,7 +5,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.2.1",
+    "@rails/webpacker": "5.1.1",
     "@tailwindcss/typography": "^0.4.0",
     "jquery": "^3.5.1",
     "purgecss": "^4.0.3",
