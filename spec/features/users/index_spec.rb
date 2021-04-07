@@ -13,7 +13,7 @@ RSpec.describe 'Users/Index', type: :feature do
         visit welcome_index_path
         click_link 'Sync Account'
 
-        expect(page).to have_css('.user-star', count: 76)
+        expect(page).to have_css('.user-star', count: 79)
 
         within(all('.user-star').last) do
           expect(page).to have_link('soul-lang / SOUL')

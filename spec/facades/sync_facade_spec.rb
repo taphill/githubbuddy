@@ -13,11 +13,11 @@ RSpec.describe SyncFacade, type: :facade do
     end
 
     it 'creates user repos', :vcr do
-      expect(UserRepo.all.count).to eq(76)
+      expect(UserRepo.all.count).to eq(79)
     end
 
     it 'creates repos', :vcr do
-      expect(Repo.all.count).to eq(76)
+      expect(Repo.all.count).to eq(79)
       expect(Repo.last.name).to eq('SOUL')
     end
   end
