@@ -30,13 +30,6 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'faraday'
-gem "nokogiri", ">= 1.11.0.rc4"
-gem 'omniauth-github'
-gem 'omniauth-rails_csrf_protection'
-gem 'pygments.rb'
-gem 'redcarpet'
-
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
@@ -68,3 +61,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'faraday'
+gem "nokogiri", ">= 1.11.0.rc4"
+gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
+gem 'pygments.rb'
+gem 'redcarpet'
+gem "tailwindcss-rails", "~> 0.3.3"
