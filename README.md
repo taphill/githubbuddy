@@ -1,8 +1,8 @@
 # GitHub Buddy
 
 [![Status](https://img.shields.io/badge/status-dev-green)]()
-[![Ruby Version](https://img.shields.io/badge/ruby-v3.0.0-red)](https://www.ruby-lang.org/en/downloads/releases/)
-[![Rails Version](https://img.shields.io/badge/rails-v6.1.3-red)](https://rubyonrails.org/)
+[![Ruby Version](https://img.shields.io/badge/ruby-v3.0.1-red)](https://www.ruby-lang.org/en/downloads/releases/)
+[![Rails Version](https://img.shields.io/badge/rails-v6.1.3.1-red)](https://rubyonrails.org/)
 
 A better way to manage your favorite repositories.
 
@@ -40,7 +40,7 @@ GitHub Buddy is an app created with Ruby on Rails and is currently hosted on Her
 
 Before getting started please take a moment to review our [code of conduct](https://github.com/taphill/githubbuddy/blob/main/CODE_OF_CONDUCT.md).
 
-This application currently uses Rails 6.1.3 and Ruby 3.0.0. To contribute please fork this repo and then clone it to your local machine.
+This application currently uses Rails 6.1.3.1 and Ruby 3.0.1. To contribute please fork this repo and then clone it to your local machine.
 
 To get your dev environment setup please make sure you have all of the following:
 
@@ -72,15 +72,15 @@ My preferred way to manage different ruby versions is with rbenv. To install rbe
 
 After you have installed rbenv you can restart your terminal and install ruby! Fair warning this will take about 10-15 minutes so maybe get up and go for a walk, or grab something to eat!
 ```
-$ rbenv install 2.7.2
+$ rbenv install 3.0.1
 ```
 
 After you have installed ruby you can cd into the githubbuddy project directory on you local machine and run
 ```
-$ rbenv local 2.7.2
+$ rbenv local 3.0.1
 ```
 
-If you run `$ rbenv version` you should see that 2.7.2 is set as the local version!
+If you run `$ rbenv version` you should see that 3.0.1 is set as the local version!
 
 ### Bundler
 
